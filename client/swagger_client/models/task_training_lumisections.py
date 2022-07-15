@@ -29,20 +29,24 @@ class TaskTrainingLumisections(object):
     """
     swagger_types = {
         'run': 'int',
+        'ls_number': 'int',
         '_date': 'datetime'
     }
 
     attribute_map = {
         'run': 'run',
+        'ls_number': 'ls_number',
         '_date': 'date'
     }
 
-    def __init__(self, run=None, _date=None):  # noqa: E501
+    def __init__(self, run=None, ls_number=None, _date=None):  # noqa: E501
         """TaskTrainingLumisections - a model defined in Swagger"""  # noqa: E501
         self._run = None
+        self._ls_number = None
         self.__date = None
         self.discriminator = None
         self.run = run
+        self.ls_number = ls_number
         if _date is not None:
             self._date = _date
 
@@ -68,6 +72,29 @@ class TaskTrainingLumisections(object):
             raise ValueError("Invalid value for `run`, must not be `None`")  # noqa: E501
 
         self._run = run
+
+    @property
+    def ls_number(self):
+        """Gets the ls_number of this TaskTrainingLumisections.  # noqa: E501
+
+
+        :return: The ls_number of this TaskTrainingLumisections.  # noqa: E501
+        :rtype: int
+        """
+        return self._ls_number
+
+    @ls_number.setter
+    def ls_number(self, ls_number):
+        """Sets the ls_number of this TaskTrainingLumisections.
+
+
+        :param ls_number: The ls_number of this TaskTrainingLumisections.  # noqa: E501
+        :type: int
+        """
+        if ls_number is None:
+            raise ValueError("Invalid value for `ls_number`, must not be `None`")  # noqa: E501
+
+        self._ls_number = ls_number
 
     @property
     def _date(self):
