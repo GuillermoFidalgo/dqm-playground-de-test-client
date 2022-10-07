@@ -63,6 +63,16 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+body = swagger_client.LumisectionCertification() # LumisectionCertification |  (optional)
+
+try:
+    api_response = api_instance.create_lumisection_certification(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->create_lumisection_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 body = swagger_client.LumisectionHistogram1D() # LumisectionHistogram1D |  (optional)
 
 try:
@@ -100,6 +110,16 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->create_run: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+body = swagger_client.RunCertification() # RunCertification |  (optional)
+
+try:
+    api_response = api_instance.create_run_certification(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->create_run_certification: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
@@ -146,9 +166,36 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this lumisection certification.
+lumisection = 'lumisection_example' # str | lumisection (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_golden_json = 'rr_is_golden_json_example' # str | rr_is_golden_json (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+run = 'run_example' # str | run (optional)
+
+try:
+    api_instance.destroy_lumisection_certification(id, lumisection=lumisection, _date=_date, rr_is_golden_json=rr_is_golden_json, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, run=run)
+except ApiException as e:
+    print("Exception when calling ApiApi->destroy_lumisection_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram1d.
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -158,15 +205,17 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_instance.destroy_lumisection_histogram1_d(id, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_instance.destroy_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_lumisection_histogram1_d: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram2d.
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -176,7 +225,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_instance.destroy_lumisection_histogram2_d(id, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_instance.destroy_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_lumisection_histogram2_d: %s\n" % e)
 
@@ -191,7 +240,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | A unique integer value identifying this run.
+run_number = 'run_number_example' # str | A unique value identifying this run.
 run_number = 'run_number_example' # str | run_number (optional)
 run_date = 'run_date_example' # str | run_date (optional)
 year = 'year_example' # str | year (optional)
@@ -203,23 +252,63 @@ oms_initial_lumi = 'oms_initial_lumi_example' # str | oms_initial_lumi (optional
 oms_end_lumi = 'oms_end_lumi_example' # str | oms_end_lumi (optional)
 
 try:
-    api_instance.destroy_run(id, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
+    api_instance.destroy_run(run_number, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_run: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this run certification.
+run = 'run_example' # str | run (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+rr_frac_pixel_good = 'rr_frac_pixel_good_example' # str | rr_frac_pixel_good (optional)
+rr_frac_strip_good = 'rr_frac_strip_good_example' # str | rr_frac_strip_good (optional)
+rr_frac_ecal_good = 'rr_frac_ecal_good_example' # str | rr_frac_ecal_good (optional)
+rr_frac_hcal_good = 'rr_frac_hcal_good_example' # str | rr_frac_hcal_good (optional)
+rr_frac_dt_good = 'rr_frac_dt_good_example' # str | rr_frac_dt_good (optional)
+rr_frac_csc_good = 'rr_frac_csc_good_example' # str | rr_frac_csc_good (optional)
+rr_frac_tracking_good = 'rr_frac_tracking_good_example' # str | rr_frac_tracking_good (optional)
+rr_frac_muon_good = 'rr_frac_muon_good_example' # str | rr_frac_muon_good (optional)
+rr_frac_egamma_good = 'rr_frac_egamma_good_example' # str | rr_frac_egamma_good (optional)
+rr_frac_tau_good = 'rr_frac_tau_good_example' # str | rr_frac_tau_good (optional)
+rr_frac_jetmet_good = 'rr_frac_jetmet_good_example' # str | rr_frac_jetmet_good (optional)
+rr_frac_btag_good = 'rr_frac_btag_good_example' # str | rr_frac_btag_good (optional)
+
+try:
+    api_instance.destroy_run_certification(id, run=run, _date=_date, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, rr_frac_pixel_good=rr_frac_pixel_good, rr_frac_strip_good=rr_frac_strip_good, rr_frac_ecal_good=rr_frac_ecal_good, rr_frac_hcal_good=rr_frac_hcal_good, rr_frac_dt_good=rr_frac_dt_good, rr_frac_csc_good=rr_frac_csc_good, rr_frac_tracking_good=rr_frac_tracking_good, rr_frac_muon_good=rr_frac_muon_good, rr_frac_egamma_good=rr_frac_egamma_good, rr_frac_tau_good=rr_frac_tau_good, rr_frac_jetmet_good=rr_frac_jetmet_good, rr_frac_btag_good=rr_frac_btag_good)
+except ApiException as e:
+    print("Exception when calling ApiApi->destroy_run_certification: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this run histogram.
 run__run_number__gte = 'run__run_number__gte_example' # str | run__run_number__gte (optional)
 run__run_number__lte = 'run__run_number__lte_example' # str | run__run_number__lte (optional)
+run__run_number = 'run__run_number_example' # str | run__run_number (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
 entries__lte = 'entries__lte_example' # str | entries__lte (optional)
+mean = 'mean_example' # str | mean (optional)
 mean__gte = 'mean__gte_example' # str | mean__gte (optional)
 mean__lte = 'mean__lte_example' # str | mean__lte (optional)
+rms = 'rms_example' # str | rms (optional)
 rms__gte = 'rms__gte_example' # str | rms__gte (optional)
 rms__lte = 'rms__lte_example' # str | rms__lte (optional)
+skewness = 'skewness_example' # str | skewness (optional)
 skewness__gte = 'skewness__gte_example' # str | skewness__gte (optional)
 skewness__lte = 'skewness__lte_example' # str | skewness__lte (optional)
+kurtosis = 'kurtosis_example' # str | kurtosis (optional)
 kurtosis__gte = 'kurtosis__gte_example' # str | kurtosis__gte (optional)
 kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
@@ -227,7 +316,7 @@ primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
 
 try:
-    api_instance.destroy_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, mean__gte=mean__gte, mean__lte=mean__lte, rms__gte=rms__gte, rms__lte=rms__lte, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_instance.destroy_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_run_histogram: %s\n" % e)
 
@@ -269,8 +358,36 @@ except ApiException as e:
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 page = 56 # int | A page number within the paginated result set. (optional)
+lumisection = 'lumisection_example' # str | lumisection (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_golden_json = 'rr_is_golden_json_example' # str | rr_is_golden_json (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+run = 'run_example' # str | run (optional)
+
+try:
+    api_response = api_instance.list_lumisection_certifications(page=page, lumisection=lumisection, _date=_date, rr_is_golden_json=rr_is_golden_json, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, run=run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->list_lumisection_certifications: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+page = 56 # int | A page number within the paginated result set. (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -280,7 +397,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.list_lumisection_histogram1_ds(page=page, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.list_lumisection_histogram1_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_lumisection_histogram1_ds: %s\n" % e)
@@ -288,8 +405,10 @@ except ApiException as e:
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 page = 56 # int | A page number within the paginated result set. (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -299,7 +418,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.list_lumisection_histogram2_ds(page=page, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.list_lumisection_histogram2_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_lumisection_histogram2_ds: %s\n" % e)
@@ -331,16 +450,57 @@ except ApiException as e:
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 page = 56 # int | A page number within the paginated result set. (optional)
+run = 'run_example' # str | run (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+rr_frac_pixel_good = 'rr_frac_pixel_good_example' # str | rr_frac_pixel_good (optional)
+rr_frac_strip_good = 'rr_frac_strip_good_example' # str | rr_frac_strip_good (optional)
+rr_frac_ecal_good = 'rr_frac_ecal_good_example' # str | rr_frac_ecal_good (optional)
+rr_frac_hcal_good = 'rr_frac_hcal_good_example' # str | rr_frac_hcal_good (optional)
+rr_frac_dt_good = 'rr_frac_dt_good_example' # str | rr_frac_dt_good (optional)
+rr_frac_csc_good = 'rr_frac_csc_good_example' # str | rr_frac_csc_good (optional)
+rr_frac_tracking_good = 'rr_frac_tracking_good_example' # str | rr_frac_tracking_good (optional)
+rr_frac_muon_good = 'rr_frac_muon_good_example' # str | rr_frac_muon_good (optional)
+rr_frac_egamma_good = 'rr_frac_egamma_good_example' # str | rr_frac_egamma_good (optional)
+rr_frac_tau_good = 'rr_frac_tau_good_example' # str | rr_frac_tau_good (optional)
+rr_frac_jetmet_good = 'rr_frac_jetmet_good_example' # str | rr_frac_jetmet_good (optional)
+rr_frac_btag_good = 'rr_frac_btag_good_example' # str | rr_frac_btag_good (optional)
+
+try:
+    api_response = api_instance.list_run_certifications(page=page, run=run, _date=_date, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, rr_frac_pixel_good=rr_frac_pixel_good, rr_frac_strip_good=rr_frac_strip_good, rr_frac_ecal_good=rr_frac_ecal_good, rr_frac_hcal_good=rr_frac_hcal_good, rr_frac_dt_good=rr_frac_dt_good, rr_frac_csc_good=rr_frac_csc_good, rr_frac_tracking_good=rr_frac_tracking_good, rr_frac_muon_good=rr_frac_muon_good, rr_frac_egamma_good=rr_frac_egamma_good, rr_frac_tau_good=rr_frac_tau_good, rr_frac_jetmet_good=rr_frac_jetmet_good, rr_frac_btag_good=rr_frac_btag_good)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->list_run_certifications: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+page = 56 # int | A page number within the paginated result set. (optional)
 run__run_number__gte = 'run__run_number__gte_example' # str | run__run_number__gte (optional)
 run__run_number__lte = 'run__run_number__lte_example' # str | run__run_number__lte (optional)
+run__run_number = 'run__run_number_example' # str | run__run_number (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
 entries__lte = 'entries__lte_example' # str | entries__lte (optional)
+mean = 'mean_example' # str | mean (optional)
 mean__gte = 'mean__gte_example' # str | mean__gte (optional)
 mean__lte = 'mean__lte_example' # str | mean__lte (optional)
+rms = 'rms_example' # str | rms (optional)
 rms__gte = 'rms__gte_example' # str | rms__gte (optional)
 rms__lte = 'rms__lte_example' # str | rms__lte (optional)
+skewness = 'skewness_example' # str | skewness (optional)
 skewness__gte = 'skewness__gte_example' # str | skewness__gte (optional)
 skewness__lte = 'skewness__lte_example' # str | skewness__lte (optional)
+kurtosis = 'kurtosis_example' # str | kurtosis (optional)
 kurtosis__gte = 'kurtosis__gte_example' # str | kurtosis__gte (optional)
 kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
@@ -348,7 +508,7 @@ primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
 
 try:
-    api_response = api_instance.list_run_histograms(page=page, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, mean__gte=mean__gte, mean__lte=mean__lte, rms__gte=rms__gte, rms__lte=rms__lte, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.list_run_histograms(page=page, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_run_histograms: %s\n" % e)
@@ -409,10 +569,39 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this lumisection certification.
+body = swagger_client.LumisectionCertification() # LumisectionCertification |  (optional)
+lumisection = 'lumisection_example' # str | lumisection (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_golden_json = 'rr_is_golden_json_example' # str | rr_is_golden_json (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+run = 'run_example' # str | run (optional)
+
+try:
+    api_response = api_instance.partial_update_lumisection_certification(id, body=body, lumisection=lumisection, _date=_date, rr_is_golden_json=rr_is_golden_json, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, run=run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->partial_update_lumisection_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram1d.
 body = swagger_client.LumisectionHistogram1D() # LumisectionHistogram1D |  (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -422,7 +611,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.partial_update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.partial_update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_lumisection_histogram1_d: %s\n" % e)
@@ -431,8 +620,10 @@ except ApiException as e:
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram2d.
 body = swagger_client.LumisectionHistogram2D() # LumisectionHistogram2D |  (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -442,7 +633,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.partial_update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.partial_update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_lumisection_histogram2_d: %s\n" % e)
@@ -460,9 +651,9 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | A unique integer value identifying this run.
+run_number = 'run_number_example' # str | A unique value identifying this run.
 body = swagger_client.Run() # Run |  (optional)
-run_number = 'run_number_example' # str | run_number (optional)
+run_number2 = 'run_number_example' # str | run_number (optional)
 run_date = 'run_date_example' # str | run_date (optional)
 year = 'year_example' # str | year (optional)
 period = 'period_example' # str | period (optional)
@@ -473,10 +664,47 @@ oms_initial_lumi = 'oms_initial_lumi_example' # str | oms_initial_lumi (optional
 oms_end_lumi = 'oms_end_lumi_example' # str | oms_end_lumi (optional)
 
 try:
-    api_response = api_instance.partial_update_run(id, body=body, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
+    api_response = api_instance.partial_update_run(run_number, body=body, run_number2=run_number2, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_run: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this run certification.
+body = swagger_client.RunCertification() # RunCertification |  (optional)
+run = 'run_example' # str | run (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+rr_frac_pixel_good = 'rr_frac_pixel_good_example' # str | rr_frac_pixel_good (optional)
+rr_frac_strip_good = 'rr_frac_strip_good_example' # str | rr_frac_strip_good (optional)
+rr_frac_ecal_good = 'rr_frac_ecal_good_example' # str | rr_frac_ecal_good (optional)
+rr_frac_hcal_good = 'rr_frac_hcal_good_example' # str | rr_frac_hcal_good (optional)
+rr_frac_dt_good = 'rr_frac_dt_good_example' # str | rr_frac_dt_good (optional)
+rr_frac_csc_good = 'rr_frac_csc_good_example' # str | rr_frac_csc_good (optional)
+rr_frac_tracking_good = 'rr_frac_tracking_good_example' # str | rr_frac_tracking_good (optional)
+rr_frac_muon_good = 'rr_frac_muon_good_example' # str | rr_frac_muon_good (optional)
+rr_frac_egamma_good = 'rr_frac_egamma_good_example' # str | rr_frac_egamma_good (optional)
+rr_frac_tau_good = 'rr_frac_tau_good_example' # str | rr_frac_tau_good (optional)
+rr_frac_jetmet_good = 'rr_frac_jetmet_good_example' # str | rr_frac_jetmet_good (optional)
+rr_frac_btag_good = 'rr_frac_btag_good_example' # str | rr_frac_btag_good (optional)
+
+try:
+    api_response = api_instance.partial_update_run_certification(id, body=body, run=run, _date=_date, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, rr_frac_pixel_good=rr_frac_pixel_good, rr_frac_strip_good=rr_frac_strip_good, rr_frac_ecal_good=rr_frac_ecal_good, rr_frac_hcal_good=rr_frac_hcal_good, rr_frac_dt_good=rr_frac_dt_good, rr_frac_csc_good=rr_frac_csc_good, rr_frac_tracking_good=rr_frac_tracking_good, rr_frac_muon_good=rr_frac_muon_good, rr_frac_egamma_good=rr_frac_egamma_good, rr_frac_tau_good=rr_frac_tau_good, rr_frac_jetmet_good=rr_frac_jetmet_good, rr_frac_btag_good=rr_frac_btag_good)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->partial_update_run_certification: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
@@ -484,14 +712,19 @@ id = 'id_example' # str | A unique integer value identifying this run histogram.
 body = swagger_client.RunHistogram() # RunHistogram |  (optional)
 run__run_number__gte = 'run__run_number__gte_example' # str | run__run_number__gte (optional)
 run__run_number__lte = 'run__run_number__lte_example' # str | run__run_number__lte (optional)
+run__run_number = 'run__run_number_example' # str | run__run_number (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
 entries__lte = 'entries__lte_example' # str | entries__lte (optional)
+mean = 'mean_example' # str | mean (optional)
 mean__gte = 'mean__gte_example' # str | mean__gte (optional)
 mean__lte = 'mean__lte_example' # str | mean__lte (optional)
+rms = 'rms_example' # str | rms (optional)
 rms__gte = 'rms__gte_example' # str | rms__gte (optional)
 rms__lte = 'rms__lte_example' # str | rms__lte (optional)
+skewness = 'skewness_example' # str | skewness (optional)
 skewness__gte = 'skewness__gte_example' # str | skewness__gte (optional)
 skewness__lte = 'skewness__lte_example' # str | skewness__lte (optional)
+kurtosis = 'kurtosis_example' # str | kurtosis (optional)
 kurtosis__gte = 'kurtosis__gte_example' # str | kurtosis__gte (optional)
 kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
@@ -499,7 +732,7 @@ primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
 
 try:
-    api_response = api_instance.partial_update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, mean__gte=mean__gte, mean__lte=mean__lte, rms__gte=rms__gte, rms__lte=rms__lte, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.partial_update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_run_histogram: %s\n" % e)
@@ -559,9 +792,37 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this lumisection certification.
+lumisection = 'lumisection_example' # str | lumisection (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_golden_json = 'rr_is_golden_json_example' # str | rr_is_golden_json (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+run = 'run_example' # str | run (optional)
+
+try:
+    api_response = api_instance.retrieve_lumisection_certification(id, lumisection=lumisection, _date=_date, rr_is_golden_json=rr_is_golden_json, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, run=run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->retrieve_lumisection_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram1d.
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -571,7 +832,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.retrieve_lumisection_histogram1_d(id, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.retrieve_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_lumisection_histogram1_d: %s\n" % e)
@@ -579,8 +840,10 @@ except ApiException as e:
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram2d.
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -590,7 +853,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.retrieve_lumisection_histogram2_d(id, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.retrieve_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_lumisection_histogram2_d: %s\n" % e)
@@ -607,7 +870,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | A unique integer value identifying this run.
+run_number = 'run_number_example' # str | A unique value identifying this run.
 run_number = 'run_number_example' # str | run_number (optional)
 run_date = 'run_date_example' # str | run_date (optional)
 year = 'year_example' # str | year (optional)
@@ -619,24 +882,65 @@ oms_initial_lumi = 'oms_initial_lumi_example' # str | oms_initial_lumi (optional
 oms_end_lumi = 'oms_end_lumi_example' # str | oms_end_lumi (optional)
 
 try:
-    api_response = api_instance.retrieve_run(id, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
+    api_response = api_instance.retrieve_run(run_number, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_run: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this run certification.
+run = 'run_example' # str | run (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+rr_frac_pixel_good = 'rr_frac_pixel_good_example' # str | rr_frac_pixel_good (optional)
+rr_frac_strip_good = 'rr_frac_strip_good_example' # str | rr_frac_strip_good (optional)
+rr_frac_ecal_good = 'rr_frac_ecal_good_example' # str | rr_frac_ecal_good (optional)
+rr_frac_hcal_good = 'rr_frac_hcal_good_example' # str | rr_frac_hcal_good (optional)
+rr_frac_dt_good = 'rr_frac_dt_good_example' # str | rr_frac_dt_good (optional)
+rr_frac_csc_good = 'rr_frac_csc_good_example' # str | rr_frac_csc_good (optional)
+rr_frac_tracking_good = 'rr_frac_tracking_good_example' # str | rr_frac_tracking_good (optional)
+rr_frac_muon_good = 'rr_frac_muon_good_example' # str | rr_frac_muon_good (optional)
+rr_frac_egamma_good = 'rr_frac_egamma_good_example' # str | rr_frac_egamma_good (optional)
+rr_frac_tau_good = 'rr_frac_tau_good_example' # str | rr_frac_tau_good (optional)
+rr_frac_jetmet_good = 'rr_frac_jetmet_good_example' # str | rr_frac_jetmet_good (optional)
+rr_frac_btag_good = 'rr_frac_btag_good_example' # str | rr_frac_btag_good (optional)
+
+try:
+    api_response = api_instance.retrieve_run_certification(id, run=run, _date=_date, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, rr_frac_pixel_good=rr_frac_pixel_good, rr_frac_strip_good=rr_frac_strip_good, rr_frac_ecal_good=rr_frac_ecal_good, rr_frac_hcal_good=rr_frac_hcal_good, rr_frac_dt_good=rr_frac_dt_good, rr_frac_csc_good=rr_frac_csc_good, rr_frac_tracking_good=rr_frac_tracking_good, rr_frac_muon_good=rr_frac_muon_good, rr_frac_egamma_good=rr_frac_egamma_good, rr_frac_tau_good=rr_frac_tau_good, rr_frac_jetmet_good=rr_frac_jetmet_good, rr_frac_btag_good=rr_frac_btag_good)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->retrieve_run_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this run histogram.
 run__run_number__gte = 'run__run_number__gte_example' # str | run__run_number__gte (optional)
 run__run_number__lte = 'run__run_number__lte_example' # str | run__run_number__lte (optional)
+run__run_number = 'run__run_number_example' # str | run__run_number (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
 entries__lte = 'entries__lte_example' # str | entries__lte (optional)
+mean = 'mean_example' # str | mean (optional)
 mean__gte = 'mean__gte_example' # str | mean__gte (optional)
 mean__lte = 'mean__lte_example' # str | mean__lte (optional)
+rms = 'rms_example' # str | rms (optional)
 rms__gte = 'rms__gte_example' # str | rms__gte (optional)
 rms__lte = 'rms__lte_example' # str | rms__lte (optional)
+skewness = 'skewness_example' # str | skewness (optional)
 skewness__gte = 'skewness__gte_example' # str | skewness__gte (optional)
 skewness__lte = 'skewness__lte_example' # str | skewness__lte (optional)
+kurtosis = 'kurtosis_example' # str | kurtosis (optional)
 kurtosis__gte = 'kurtosis__gte_example' # str | kurtosis__gte (optional)
 kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
@@ -644,7 +948,7 @@ primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
 
 try:
-    api_response = api_instance.retrieve_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, mean__gte=mean__gte, mean__lte=mean__lte, rms__gte=rms__gte, rms__lte=rms__lte, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.retrieve_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_run_histogram: %s\n" % e)
@@ -697,10 +1001,39 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this lumisection certification.
+body = swagger_client.LumisectionCertification() # LumisectionCertification |  (optional)
+lumisection = 'lumisection_example' # str | lumisection (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_golden_json = 'rr_is_golden_json_example' # str | rr_is_golden_json (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+run = 'run_example' # str | run (optional)
+
+try:
+    api_response = api_instance.update_lumisection_certification(id, body=body, lumisection=lumisection, _date=_date, rr_is_golden_json=rr_is_golden_json, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, run=run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->update_lumisection_certification: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram1d.
 body = swagger_client.LumisectionHistogram1D() # LumisectionHistogram1D |  (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -710,7 +1043,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_lumisection_histogram1_d: %s\n" % e)
@@ -719,8 +1052,10 @@ except ApiException as e:
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | A unique integer value identifying this lumisection histogram2d.
 body = swagger_client.LumisectionHistogram2D() # LumisectionHistogram2D |  (optional)
+lumisection__run__run_number = 'lumisection__run__run_number_example' # str | lumisection__run__run_number (optional)
 lumisection__run__run_number__gte = 'lumisection__run__run_number__gte_example' # str | lumisection__run__run_number__gte (optional)
 lumisection__run__run_number__lte = 'lumisection__run__run_number__lte_example' # str | lumisection__run__run_number__lte (optional)
+lumisection__ls_number = 'lumisection__ls_number_example' # str | lumisection__ls_number (optional)
 lumisection__ls_number__gte = 'lumisection__ls_number__gte_example' # str | lumisection__ls_number__gte (optional)
 lumisection__ls_number__lte = 'lumisection__ls_number__lte_example' # str | lumisection__ls_number__lte (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
@@ -730,7 +1065,7 @@ lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumise
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
 
 try:
-    api_response = api_instance.update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_lumisection_histogram2_d: %s\n" % e)
@@ -748,9 +1083,9 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | A unique integer value identifying this run.
+run_number = 'run_number_example' # str | A unique value identifying this run.
 body = swagger_client.Run() # Run |  (optional)
-run_number = 'run_number_example' # str | run_number (optional)
+run_number2 = 'run_number_example' # str | run_number (optional)
 run_date = 'run_date_example' # str | run_date (optional)
 year = 'year_example' # str | year (optional)
 period = 'period_example' # str | period (optional)
@@ -761,10 +1096,47 @@ oms_initial_lumi = 'oms_initial_lumi_example' # str | oms_initial_lumi (optional
 oms_end_lumi = 'oms_end_lumi_example' # str | oms_end_lumi (optional)
 
 try:
-    api_response = api_instance.update_run(id, body=body, run_number=run_number, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
+    api_response = api_instance.update_run(run_number, body=body, run_number2=run_number2, run_date=run_date, year=year, period=period, _date=_date, oms_fill=oms_fill, oms_lumisections=oms_lumisections, oms_initial_lumi=oms_initial_lumi, oms_end_lumi=oms_end_lumi)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_run: %s\n" % e)
+
+# create an instance of the API class
+api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | A unique integer value identifying this run certification.
+body = swagger_client.RunCertification() # RunCertification |  (optional)
+run = 'run_example' # str | run (optional)
+_date = '_date_example' # str | date (optional)
+rr_is_pixel_good = 'rr_is_pixel_good_example' # str | rr_is_pixel_good (optional)
+rr_is_strip_good = 'rr_is_strip_good_example' # str | rr_is_strip_good (optional)
+rr_is_ecal_good = 'rr_is_ecal_good_example' # str | rr_is_ecal_good (optional)
+rr_is_hcal_good = 'rr_is_hcal_good_example' # str | rr_is_hcal_good (optional)
+rr_is_dt_good = 'rr_is_dt_good_example' # str | rr_is_dt_good (optional)
+rr_is_csc_good = 'rr_is_csc_good_example' # str | rr_is_csc_good (optional)
+rr_is_tracking_good = 'rr_is_tracking_good_example' # str | rr_is_tracking_good (optional)
+rr_is_muon_good = 'rr_is_muon_good_example' # str | rr_is_muon_good (optional)
+rr_is_egamma_good = 'rr_is_egamma_good_example' # str | rr_is_egamma_good (optional)
+rr_is_tau_good = 'rr_is_tau_good_example' # str | rr_is_tau_good (optional)
+rr_is_jetmet_good = 'rr_is_jetmet_good_example' # str | rr_is_jetmet_good (optional)
+rr_is_btag_good = 'rr_is_btag_good_example' # str | rr_is_btag_good (optional)
+rr_frac_pixel_good = 'rr_frac_pixel_good_example' # str | rr_frac_pixel_good (optional)
+rr_frac_strip_good = 'rr_frac_strip_good_example' # str | rr_frac_strip_good (optional)
+rr_frac_ecal_good = 'rr_frac_ecal_good_example' # str | rr_frac_ecal_good (optional)
+rr_frac_hcal_good = 'rr_frac_hcal_good_example' # str | rr_frac_hcal_good (optional)
+rr_frac_dt_good = 'rr_frac_dt_good_example' # str | rr_frac_dt_good (optional)
+rr_frac_csc_good = 'rr_frac_csc_good_example' # str | rr_frac_csc_good (optional)
+rr_frac_tracking_good = 'rr_frac_tracking_good_example' # str | rr_frac_tracking_good (optional)
+rr_frac_muon_good = 'rr_frac_muon_good_example' # str | rr_frac_muon_good (optional)
+rr_frac_egamma_good = 'rr_frac_egamma_good_example' # str | rr_frac_egamma_good (optional)
+rr_frac_tau_good = 'rr_frac_tau_good_example' # str | rr_frac_tau_good (optional)
+rr_frac_jetmet_good = 'rr_frac_jetmet_good_example' # str | rr_frac_jetmet_good (optional)
+rr_frac_btag_good = 'rr_frac_btag_good_example' # str | rr_frac_btag_good (optional)
+
+try:
+    api_response = api_instance.update_run_certification(id, body=body, run=run, _date=_date, rr_is_pixel_good=rr_is_pixel_good, rr_is_strip_good=rr_is_strip_good, rr_is_ecal_good=rr_is_ecal_good, rr_is_hcal_good=rr_is_hcal_good, rr_is_dt_good=rr_is_dt_good, rr_is_csc_good=rr_is_csc_good, rr_is_tracking_good=rr_is_tracking_good, rr_is_muon_good=rr_is_muon_good, rr_is_egamma_good=rr_is_egamma_good, rr_is_tau_good=rr_is_tau_good, rr_is_jetmet_good=rr_is_jetmet_good, rr_is_btag_good=rr_is_btag_good, rr_frac_pixel_good=rr_frac_pixel_good, rr_frac_strip_good=rr_frac_strip_good, rr_frac_ecal_good=rr_frac_ecal_good, rr_frac_hcal_good=rr_frac_hcal_good, rr_frac_dt_good=rr_frac_dt_good, rr_frac_csc_good=rr_frac_csc_good, rr_frac_tracking_good=rr_frac_tracking_good, rr_frac_muon_good=rr_frac_muon_good, rr_frac_egamma_good=rr_frac_egamma_good, rr_frac_tau_good=rr_frac_tau_good, rr_frac_jetmet_good=rr_frac_jetmet_good, rr_frac_btag_good=rr_frac_btag_good)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->update_run_certification: %s\n" % e)
 
 # create an instance of the API class
 api_instance = swagger_client.ApiApi(swagger_client.ApiClient(configuration))
@@ -772,14 +1144,19 @@ id = 'id_example' # str | A unique integer value identifying this run histogram.
 body = swagger_client.RunHistogram() # RunHistogram |  (optional)
 run__run_number__gte = 'run__run_number__gte_example' # str | run__run_number__gte (optional)
 run__run_number__lte = 'run__run_number__lte_example' # str | run__run_number__lte (optional)
+run__run_number = 'run__run_number_example' # str | run__run_number (optional)
 entries__gte = 'entries__gte_example' # str | entries__gte (optional)
 entries__lte = 'entries__lte_example' # str | entries__lte (optional)
+mean = 'mean_example' # str | mean (optional)
 mean__gte = 'mean__gte_example' # str | mean__gte (optional)
 mean__lte = 'mean__lte_example' # str | mean__lte (optional)
+rms = 'rms_example' # str | rms (optional)
 rms__gte = 'rms__gte_example' # str | rms__gte (optional)
 rms__lte = 'rms__lte_example' # str | rms__lte (optional)
+skewness = 'skewness_example' # str | skewness (optional)
 skewness__gte = 'skewness__gte_example' # str | skewness__gte (optional)
 skewness__lte = 'skewness__lte_example' # str | skewness__lte (optional)
+kurtosis = 'kurtosis_example' # str | kurtosis (optional)
 kurtosis__gte = 'kurtosis__gte_example' # str | kurtosis__gte (optional)
 kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
@@ -787,7 +1164,7 @@ primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
 
 try:
-    api_response = api_instance.update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, mean__gte=mean__gte, mean__lte=mean__lte, rms__gte=rms__gte, rms__lte=rms__lte, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_run_histogram: %s\n" % e)
@@ -822,53 +1199,65 @@ All URIs are relative to */*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ApiApi* | [**create_lumisection**](docs/ApiApi.md#create_lumisection) | **POST** /api/lumisections/ | 
+*ApiApi* | [**create_lumisection_certification**](docs/ApiApi.md#create_lumisection_certification) | **POST** /api/lumisection_certifications/ | 
 *ApiApi* | [**create_lumisection_histogram1_d**](docs/ApiApi.md#create_lumisection_histogram1_d) | **POST** /api/lumisection_histograms_1d/ | 
 *ApiApi* | [**create_lumisection_histogram2_d**](docs/ApiApi.md#create_lumisection_histogram2_d) | **POST** /api/lumisection_histograms_2d/ | 
 *ApiApi* | [**create_prediction**](docs/ApiApi.md#create_prediction) | **POST** /api/predictions/ | 
 *ApiApi* | [**create_run**](docs/ApiApi.md#create_run) | **POST** /api/runs/ | 
+*ApiApi* | [**create_run_certification**](docs/ApiApi.md#create_run_certification) | **POST** /api/run_certifications/ | 
 *ApiApi* | [**create_run_histogram**](docs/ApiApi.md#create_run_histogram) | **POST** /api/run_histograms/ | 
 *ApiApi* | [**create_strategy**](docs/ApiApi.md#create_strategy) | **POST** /api/strategies/ | 
 *ApiApi* | [**create_task**](docs/ApiApi.md#create_task) | **POST** /api/tasks/ | 
 *ApiApi* | [**destroy_lumisection**](docs/ApiApi.md#destroy_lumisection) | **DELETE** /api/lumisections/{id}/ | 
+*ApiApi* | [**destroy_lumisection_certification**](docs/ApiApi.md#destroy_lumisection_certification) | **DELETE** /api/lumisection_certifications/{id}/ | 
 *ApiApi* | [**destroy_lumisection_histogram1_d**](docs/ApiApi.md#destroy_lumisection_histogram1_d) | **DELETE** /api/lumisection_histograms_1d/{id}/ | 
 *ApiApi* | [**destroy_lumisection_histogram2_d**](docs/ApiApi.md#destroy_lumisection_histogram2_d) | **DELETE** /api/lumisection_histograms_2d/{id}/ | 
 *ApiApi* | [**destroy_prediction**](docs/ApiApi.md#destroy_prediction) | **DELETE** /api/predictions/{id}/ | 
-*ApiApi* | [**destroy_run**](docs/ApiApi.md#destroy_run) | **DELETE** /api/runs/{id}/ | 
+*ApiApi* | [**destroy_run**](docs/ApiApi.md#destroy_run) | **DELETE** /api/runs/{run_number}/ | 
+*ApiApi* | [**destroy_run_certification**](docs/ApiApi.md#destroy_run_certification) | **DELETE** /api/run_certifications/{id}/ | 
 *ApiApi* | [**destroy_run_histogram**](docs/ApiApi.md#destroy_run_histogram) | **DELETE** /api/run_histograms/{id}/ | 
 *ApiApi* | [**destroy_strategy**](docs/ApiApi.md#destroy_strategy) | **DELETE** /api/strategies/{id}/ | 
 *ApiApi* | [**destroy_task**](docs/ApiApi.md#destroy_task) | **DELETE** /api/tasks/{id}/ | 
 *ApiApi* | [**list_histogram_data_files**](docs/ApiApi.md#list_histogram_data_files) | **GET** /api/histogram_data_files/ | 
+*ApiApi* | [**list_lumisection_certifications**](docs/ApiApi.md#list_lumisection_certifications) | **GET** /api/lumisection_certifications/ | 
 *ApiApi* | [**list_lumisection_histogram1_ds**](docs/ApiApi.md#list_lumisection_histogram1_ds) | **GET** /api/lumisection_histograms_1d/ | 
 *ApiApi* | [**list_lumisection_histogram2_ds**](docs/ApiApi.md#list_lumisection_histogram2_ds) | **GET** /api/lumisection_histograms_2d/ | 
 *ApiApi* | [**list_lumisections**](docs/ApiApi.md#list_lumisections) | **GET** /api/lumisections/ | 
 *ApiApi* | [**list_predictions**](docs/ApiApi.md#list_predictions) | **GET** /api/predictions/ | 
+*ApiApi* | [**list_run_certifications**](docs/ApiApi.md#list_run_certifications) | **GET** /api/run_certifications/ | 
 *ApiApi* | [**list_run_histograms**](docs/ApiApi.md#list_run_histograms) | **GET** /api/run_histograms/ | 
 *ApiApi* | [**list_runs**](docs/ApiApi.md#list_runs) | **GET** /api/runs/ | 
 *ApiApi* | [**list_strategys**](docs/ApiApi.md#list_strategys) | **GET** /api/strategies/ | 
 *ApiApi* | [**list_tasks**](docs/ApiApi.md#list_tasks) | **GET** /api/tasks/ | 
 *ApiApi* | [**partial_update_lumisection**](docs/ApiApi.md#partial_update_lumisection) | **PATCH** /api/lumisections/{id}/ | 
+*ApiApi* | [**partial_update_lumisection_certification**](docs/ApiApi.md#partial_update_lumisection_certification) | **PATCH** /api/lumisection_certifications/{id}/ | 
 *ApiApi* | [**partial_update_lumisection_histogram1_d**](docs/ApiApi.md#partial_update_lumisection_histogram1_d) | **PATCH** /api/lumisection_histograms_1d/{id}/ | 
 *ApiApi* | [**partial_update_lumisection_histogram2_d**](docs/ApiApi.md#partial_update_lumisection_histogram2_d) | **PATCH** /api/lumisection_histograms_2d/{id}/ | 
 *ApiApi* | [**partial_update_prediction**](docs/ApiApi.md#partial_update_prediction) | **PATCH** /api/predictions/{id}/ | 
-*ApiApi* | [**partial_update_run**](docs/ApiApi.md#partial_update_run) | **PATCH** /api/runs/{id}/ | 
+*ApiApi* | [**partial_update_run**](docs/ApiApi.md#partial_update_run) | **PATCH** /api/runs/{run_number}/ | 
+*ApiApi* | [**partial_update_run_certification**](docs/ApiApi.md#partial_update_run_certification) | **PATCH** /api/run_certifications/{id}/ | 
 *ApiApi* | [**partial_update_run_histogram**](docs/ApiApi.md#partial_update_run_histogram) | **PATCH** /api/run_histograms/{id}/ | 
 *ApiApi* | [**partial_update_strategy**](docs/ApiApi.md#partial_update_strategy) | **PATCH** /api/strategies/{id}/ | 
 *ApiApi* | [**partial_update_task**](docs/ApiApi.md#partial_update_task) | **PATCH** /api/tasks/{id}/ | 
 *ApiApi* | [**retrieve_histogram_data_file**](docs/ApiApi.md#retrieve_histogram_data_file) | **GET** /api/histogram_data_files/{id}/ | 
 *ApiApi* | [**retrieve_lumisection**](docs/ApiApi.md#retrieve_lumisection) | **GET** /api/lumisections/{id}/ | 
+*ApiApi* | [**retrieve_lumisection_certification**](docs/ApiApi.md#retrieve_lumisection_certification) | **GET** /api/lumisection_certifications/{id}/ | 
 *ApiApi* | [**retrieve_lumisection_histogram1_d**](docs/ApiApi.md#retrieve_lumisection_histogram1_d) | **GET** /api/lumisection_histograms_1d/{id}/ | 
 *ApiApi* | [**retrieve_lumisection_histogram2_d**](docs/ApiApi.md#retrieve_lumisection_histogram2_d) | **GET** /api/lumisection_histograms_2d/{id}/ | 
 *ApiApi* | [**retrieve_prediction**](docs/ApiApi.md#retrieve_prediction) | **GET** /api/predictions/{id}/ | 
-*ApiApi* | [**retrieve_run**](docs/ApiApi.md#retrieve_run) | **GET** /api/runs/{id}/ | 
+*ApiApi* | [**retrieve_run**](docs/ApiApi.md#retrieve_run) | **GET** /api/runs/{run_number}/ | 
+*ApiApi* | [**retrieve_run_certification**](docs/ApiApi.md#retrieve_run_certification) | **GET** /api/run_certifications/{id}/ | 
 *ApiApi* | [**retrieve_run_histogram**](docs/ApiApi.md#retrieve_run_histogram) | **GET** /api/run_histograms/{id}/ | 
 *ApiApi* | [**retrieve_strategy**](docs/ApiApi.md#retrieve_strategy) | **GET** /api/strategies/{id}/ | 
 *ApiApi* | [**retrieve_task**](docs/ApiApi.md#retrieve_task) | **GET** /api/tasks/{id}/ | 
 *ApiApi* | [**start_parsing_histogram_data_file**](docs/ApiApi.md#start_parsing_histogram_data_file) | **POST** /api/histogram_data_files/{id}/start_parsing/ | 
 *ApiApi* | [**update_lumisection**](docs/ApiApi.md#update_lumisection) | **PUT** /api/lumisections/{id}/ | 
+*ApiApi* | [**update_lumisection_certification**](docs/ApiApi.md#update_lumisection_certification) | **PUT** /api/lumisection_certifications/{id}/ | 
 *ApiApi* | [**update_lumisection_histogram1_d**](docs/ApiApi.md#update_lumisection_histogram1_d) | **PUT** /api/lumisection_histograms_1d/{id}/ | 
 *ApiApi* | [**update_lumisection_histogram2_d**](docs/ApiApi.md#update_lumisection_histogram2_d) | **PUT** /api/lumisection_histograms_2d/{id}/ | 
 *ApiApi* | [**update_prediction**](docs/ApiApi.md#update_prediction) | **PUT** /api/predictions/{id}/ | 
-*ApiApi* | [**update_run**](docs/ApiApi.md#update_run) | **PUT** /api/runs/{id}/ | 
+*ApiApi* | [**update_run**](docs/ApiApi.md#update_run) | **PUT** /api/runs/{run_number}/ | 
+*ApiApi* | [**update_run_certification**](docs/ApiApi.md#update_run_certification) | **PUT** /api/run_certifications/{id}/ | 
 *ApiApi* | [**update_run_histogram**](docs/ApiApi.md#update_run_histogram) | **PUT** /api/run_histograms/{id}/ | 
 *ApiApi* | [**update_strategy**](docs/ApiApi.md#update_strategy) | **PUT** /api/strategies/{id}/ | 
 *ApiApi* | [**update_task**](docs/ApiApi.md#update_task) | **PUT** /api/tasks/{id}/ | 
@@ -878,6 +1267,7 @@ Class | Method | HTTP request | Description
  - [HistogramDataFile](docs/HistogramDataFile.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [InlineResponse20010](docs/InlineResponse20010.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -885,7 +1275,9 @@ Class | Method | HTTP request | Description
  - [InlineResponse2006](docs/InlineResponse2006.md)
  - [InlineResponse2007](docs/InlineResponse2007.md)
  - [InlineResponse2008](docs/InlineResponse2008.md)
+ - [InlineResponse2009](docs/InlineResponse2009.md)
  - [Lumisection](docs/Lumisection.md)
+ - [LumisectionCertification](docs/LumisectionCertification.md)
  - [LumisectionHistogram1D](docs/LumisectionHistogram1D.md)
  - [LumisectionHistogram2D](docs/LumisectionHistogram2D.md)
  - [Prediction](docs/Prediction.md)
@@ -893,6 +1285,7 @@ Class | Method | HTTP request | Description
  - [PredictionLumisectionHistograms2d](docs/PredictionLumisectionHistograms2d.md)
  - [PredictionRunHistograms](docs/PredictionRunHistograms.md)
  - [Run](docs/Run.md)
+ - [RunCertification](docs/RunCertification.md)
  - [RunHistogram](docs/RunHistogram.md)
  - [Strategy](docs/Strategy.md)
  - [Task](docs/Task.md)

@@ -39,9 +39,9 @@ class HistogramDataFile(object):
         'granularity': 'str',
         'created': 'datetime',
         'modified': 'datetime',
-        'run_histograms': 'list[str]',
-        'lumisection_histograms_1d': 'list[str]',
-        'lumisection_histograms_2d': 'list[str]'
+        'run_histograms': 'int',
+        'lumisection_histograms_1d': 'int',
+        'lumisection_histograms_2d': 'int'
     }
 
     attribute_map = {
@@ -366,7 +366,7 @@ class HistogramDataFile(object):
 
 
         :return: The run_histograms of this HistogramDataFile.  # noqa: E501
-        :rtype: list[str]
+        :rtype: int
         """
         return self._run_histograms
 
@@ -376,7 +376,7 @@ class HistogramDataFile(object):
 
 
         :param run_histograms: The run_histograms of this HistogramDataFile.  # noqa: E501
-        :type: list[str]
+        :type: int
         """
         if run_histograms is None:
             raise ValueError("Invalid value for `run_histograms`, must not be `None`")  # noqa: E501
@@ -389,7 +389,7 @@ class HistogramDataFile(object):
 
 
         :return: The lumisection_histograms_1d of this HistogramDataFile.  # noqa: E501
-        :rtype: list[str]
+        :rtype: int
         """
         return self._lumisection_histograms_1d
 
@@ -399,7 +399,7 @@ class HistogramDataFile(object):
 
 
         :param lumisection_histograms_1d: The lumisection_histograms_1d of this HistogramDataFile.  # noqa: E501
-        :type: list[str]
+        :type: int
         """
         if lumisection_histograms_1d is None:
             raise ValueError("Invalid value for `lumisection_histograms_1d`, must not be `None`")  # noqa: E501
@@ -412,7 +412,7 @@ class HistogramDataFile(object):
 
 
         :return: The lumisection_histograms_2d of this HistogramDataFile.  # noqa: E501
-        :rtype: list[str]
+        :rtype: int
         """
         return self._lumisection_histograms_2d
 
@@ -422,7 +422,7 @@ class HistogramDataFile(object):
 
 
         :param lumisection_histograms_2d: The lumisection_histograms_2d of this HistogramDataFile.  # noqa: E501
-        :type: list[str]
+        :type: int
         """
         if lumisection_histograms_2d is None:
             raise ValueError("Invalid value for `lumisection_histograms_2d`, must not be `None`")  # noqa: E501

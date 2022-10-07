@@ -33,7 +33,7 @@ class LumisectionHistogram2D(object):
         'lumisection': 'int',
         'title': 'str',
         'entries': 'int',
-        'data': 'list[float]',
+        'data': 'list[list[float]]',
         'x_min': 'float',
         'x_max': 'float',
         'x_bin': 'int',
@@ -214,7 +214,7 @@ class LumisectionHistogram2D(object):
 
 
         :return: The data of this LumisectionHistogram2D.  # noqa: E501
-        :rtype: list[float]
+        :rtype: list[list[float]]
         """
         return self._data
 
@@ -224,7 +224,7 @@ class LumisectionHistogram2D(object):
 
 
         :param data: The data of this LumisectionHistogram2D.  # noqa: E501
-        :type: list[float]
+        :type: list[list[float]]
         """
 
         self._data = data

@@ -28,7 +28,7 @@ class Lumisection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'run': 'int',
+        'run': 'str',
         'ls_number': 'int',
         '_date': 'datetime'
     }
@@ -56,7 +56,7 @@ class Lumisection(object):
 
 
         :return: The run of this Lumisection.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._run
 
@@ -66,7 +66,7 @@ class Lumisection(object):
 
 
         :param run: The run of this Lumisection.  # noqa: E501
-        :type: int
+        :type: str
         """
         if run is None:
             raise ValueError("Invalid value for `run`, must not be `None`")  # noqa: E501

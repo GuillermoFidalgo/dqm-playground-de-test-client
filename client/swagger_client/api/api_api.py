@@ -146,10 +146,10 @@ class ApiApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run:
+        :param str run:
         :param int ls_number:
         :param datetime _date:
         :return: Lumisection
@@ -172,10 +172,10 @@ class ApiApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run:
+        :param str run:
         :param int ls_number:
         :param datetime _date:
         :return: Lumisection
@@ -261,10 +261,10 @@ class ApiApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run:
+        :param str run:
         :param int ls_number:
         :param datetime _date:
         :return: Lumisection
@@ -287,10 +287,10 @@ class ApiApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run:
+        :param str run:
         :param int ls_number:
         :param datetime _date:
         :return: Lumisection
@@ -367,6 +367,621 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_lumisection_certification(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param LumisectionCertification body:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_lumisection_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param LumisectionCertification body:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_lumisection_certification(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id:
+        :param int run:
+        :param int lumisection:
+        :param datetime _date:
+        :param bool rr_is_golden_json:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_lumisection_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id:
+        :param int run:
+        :param int lumisection:
+        :param datetime _date:
+        :param bool rr_is_golden_json:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id', 'run', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_lumisection_certification(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id:
+        :param int run:
+        :param int lumisection:
+        :param datetime _date:
+        :param bool rr_is_golden_json:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_lumisection_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_lumisection_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_lumisection_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id:
+        :param int run:
+        :param int lumisection:
+        :param datetime _date:
+        :param bool rr_is_golden_json:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id', 'run', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_lumisection_histogram1_d(self, **kwargs):  # noqa: E501
         """create_lumisection_histogram1_d  # noqa: E501
 
@@ -1009,7 +1624,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -1022,7 +1637,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -1055,7 +1670,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -1068,7 +1683,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -1206,7 +1821,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -1219,7 +1834,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -1252,7 +1867,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -1265,7 +1880,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -2150,6 +2765,821 @@ class ApiApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Run',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_run_certification(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RunCertification body:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_run_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RunCertification body:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_run_certification(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id:
+        :param int run:
+        :param datetime _date:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :param float rr_frac_pixel_good:
+        :param float rr_frac_strip_good:
+        :param float rr_frac_ecal_good:
+        :param float rr_frac_hcal_good:
+        :param float rr_frac_dt_good:
+        :param float rr_frac_csc_good:
+        :param float rr_frac_tracking_good:
+        :param float rr_frac_muon_good:
+        :param float rr_frac_egamma_good:
+        :param float rr_frac_tau_good:
+        :param float rr_frac_jetmet_good:
+        :param float rr_frac_btag_good:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_run_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id:
+        :param int run:
+        :param datetime _date:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :param float rr_frac_pixel_good:
+        :param float rr_frac_strip_good:
+        :param float rr_frac_ecal_good:
+        :param float rr_frac_hcal_good:
+        :param float rr_frac_dt_good:
+        :param float rr_frac_csc_good:
+        :param float rr_frac_tracking_good:
+        :param float rr_frac_muon_good:
+        :param float rr_frac_egamma_good:
+        :param float rr_frac_tau_good:
+        :param float rr_frac_jetmet_good:
+        :param float rr_frac_btag_good:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_run_certification(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id:
+        :param int run:
+        :param datetime _date:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :param float rr_frac_pixel_good:
+        :param float rr_frac_strip_good:
+        :param float rr_frac_ecal_good:
+        :param float rr_frac_hcal_good:
+        :param float rr_frac_dt_good:
+        :param float rr_frac_csc_good:
+        :param float rr_frac_tracking_good:
+        :param float rr_frac_muon_good:
+        :param float rr_frac_egamma_good:
+        :param float rr_frac_tau_good:
+        :param float rr_frac_jetmet_good:
+        :param float rr_frac_btag_good:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_run_certification_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_run_certification_with_http_info(self, **kwargs):  # noqa: E501
+        """create_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_run_certification_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id:
+        :param int run:
+        :param datetime _date:
+        :param bool rr_is_pixel_good:
+        :param bool rr_is_strip_good:
+        :param bool rr_is_ecal_good:
+        :param bool rr_is_hcal_good:
+        :param bool rr_is_dt_good:
+        :param bool rr_is_csc_good:
+        :param bool rr_is_tracking_good:
+        :param bool rr_is_muon_good:
+        :param bool rr_is_egamma_good:
+        :param bool rr_is_tau_good:
+        :param bool rr_is_jetmet_good:
+        :param bool rr_is_btag_good:
+        :param float rr_frac_pixel_good:
+        :param float rr_frac_strip_good:
+        :param float rr_frac_ecal_good:
+        :param float rr_frac_hcal_good:
+        :param float rr_frac_dt_good:
+        :param float rr_frac_csc_good:
+        :param float rr_frac_tracking_good:
+        :param float rr_frac_muon_good:
+        :param float rr_frac_egamma_good:
+        :param float rr_frac_tau_good:
+        :param float rr_frac_jetmet_good:
+        :param float rr_frac_btag_good:
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3531,6 +4961,159 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def destroy_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """destroy_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.destroy_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.destroy_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.destroy_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def destroy_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """destroy_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.destroy_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method destroy_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `destroy_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def destroy_lumisection_histogram1_d(self, id, **kwargs):  # noqa: E501
         """destroy_lumisection_histogram1_d  # noqa: E501
 
@@ -3541,8 +5124,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -3571,8 +5156,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -3585,7 +5172,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3612,10 +5199,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -3666,8 +5257,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -3696,8 +5289,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -3710,7 +5305,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3737,10 +5332,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -3870,16 +5469,16 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def destroy_run(self, id, **kwargs):  # noqa: E501
+    def destroy_run(self, run_number, **kwargs):  # noqa: E501
         """destroy_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.destroy_run(id, async_req=True)
+        >>> thread = api.destroy_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param str run_number: run_number
         :param str run_date: run_date
         :param str year: year
@@ -3895,21 +5494,21 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.destroy_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.destroy_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.destroy_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.destroy_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def destroy_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def destroy_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """destroy_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.destroy_run_with_http_info(id, async_req=True)
+        >>> thread = api.destroy_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param str run_number: run_number
         :param str run_date: run_date
         :param str year: year
@@ -3924,7 +5523,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3939,16 +5538,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `destroy_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `destroy_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -3980,7 +5579,200 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'DELETE',
+            '/api/runs/{run_number}/', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def destroy_run_certification(self, id, **kwargs):  # noqa: E501
+        """destroy_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.destroy_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.destroy_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.destroy_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def destroy_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """destroy_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.destroy_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method destroy_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `destroy_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -4007,14 +5799,19 @@ class ApiApi(object):
         :param str id: A unique integer value identifying this run histogram. (required)
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -4043,14 +5840,19 @@ class ApiApi(object):
         :param str id: A unique integer value identifying this run histogram. (required)
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -4061,7 +5863,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4092,22 +5894,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -4439,6 +6251,159 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def list_lumisection_certifications(self, **kwargs):  # noqa: E501
+        """list_lumisection_certifications  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_lumisection_certifications(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: A page number within the paginated result set.
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: InlineResponse20010
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_lumisection_certifications_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.list_lumisection_certifications_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def list_lumisection_certifications_with_http_info(self, **kwargs):  # noqa: E501
+        """list_lumisection_certifications  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_lumisection_certifications_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: A page number within the paginated result set.
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: InlineResponse20010
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_lumisection_certifications" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse20010',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def list_lumisection_histogram1_ds(self, **kwargs):  # noqa: E501
         """list_lumisection_histogram1_ds  # noqa: E501
 
@@ -4449,8 +6414,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -4479,8 +6446,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -4493,7 +6462,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4516,10 +6485,14 @@ class ApiApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -4574,8 +6547,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -4604,8 +6579,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -4618,7 +6595,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4641,10 +6618,14 @@ class ApiApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -4883,6 +6864,199 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def list_run_certifications(self, **kwargs):  # noqa: E501
+        """list_run_certifications  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_run_certifications(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: A page number within the paginated result set.
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: InlineResponse2009
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_run_certifications_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.list_run_certifications_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def list_run_certifications_with_http_info(self, **kwargs):  # noqa: E501
+        """list_run_certifications  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_run_certifications_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: A page number within the paginated result set.
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: InlineResponse2009
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_run_certifications" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse2009',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def list_run_histograms(self, **kwargs):  # noqa: E501
         """list_run_histograms  # noqa: E501
 
@@ -4895,14 +7069,19 @@ class ApiApi(object):
         :param int page: A page number within the paginated result set.
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -4931,14 +7110,19 @@ class ApiApi(object):
         :param int page: A page number within the paginated result set.
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -4949,7 +7133,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['page', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4976,22 +7160,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -5474,10 +7668,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -5505,10 +7699,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -5613,10 +7807,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -5644,10 +7838,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -5742,6 +7936,837 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def partial_update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param LumisectionCertification body:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param LumisectionCertification body:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'body', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def partial_update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def partial_update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def partial_update_lumisection_histogram1_d(self, id, **kwargs):  # noqa: E501
         """partial_update_lumisection_histogram1_d  # noqa: E501
 
@@ -5753,8 +8778,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
         :param LumisectionHistogram1D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -5784,8 +8811,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
         :param LumisectionHistogram1D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -5798,7 +8827,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5825,10 +8854,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -5951,8 +8984,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6001,8 +9036,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6015,7 +9052,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6042,10 +9079,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -6168,8 +9209,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6218,8 +9261,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6232,7 +9277,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6259,10 +9304,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -6366,8 +9415,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
         :param LumisectionHistogram2D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6397,8 +9448,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
         :param LumisectionHistogram2D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6411,7 +9464,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6438,10 +9491,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -6561,7 +9618,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -6574,7 +9631,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -6582,8 +9639,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6617,7 +9676,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -6630,7 +9689,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -6638,8 +9697,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6652,7 +9713,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6679,10 +9740,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -6802,7 +9867,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -6815,7 +9880,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -6823,8 +9888,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6858,7 +9925,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -6871,7 +9938,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -6879,8 +9946,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -6893,7 +9962,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6920,10 +9989,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -7505,18 +10578,18 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def partial_update_run(self, id, **kwargs):  # noqa: E501
+    def partial_update_run(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run(id, async_req=True)
+        >>> thread = api.partial_update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param Run body:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7531,23 +10604,23 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def partial_update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def partial_update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run_with_http_info(id, async_req=True)
+        >>> thread = api.partial_update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param Run body:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7561,7 +10634,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'body', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7576,16 +10649,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `partial_update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `partial_update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -7635,7 +10708,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PATCH',
+            '/api/runs/{run_number}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -7650,21 +10723,21 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def partial_update_run(self, id, **kwargs):  # noqa: E501
+    def partial_update_run(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run(id, async_req=True)
+        >>> thread = api.partial_update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7679,26 +10752,26 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def partial_update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def partial_update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run_with_http_info(id, async_req=True)
+        >>> thread = api.partial_update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7712,7 +10785,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7727,16 +10800,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `partial_update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `partial_update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -7786,7 +10859,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PATCH',
+            '/api/runs/{run_number}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -7801,21 +10874,21 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def partial_update_run(self, id, **kwargs):  # noqa: E501
+    def partial_update_run(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run(id, async_req=True)
+        >>> thread = api.partial_update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7830,26 +10903,26 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.partial_update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.partial_update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def partial_update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def partial_update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """partial_update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_run_with_http_info(id, async_req=True)
+        >>> thread = api.partial_update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -7863,7 +10936,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7878,16 +10951,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `partial_update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `partial_update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -7937,7 +11010,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PATCH',
+            '/api/runs/{run_number}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -7945,6 +11018,1157 @@ class ApiApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Run',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def partial_update_run_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param RunCertification body:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param RunCertification body:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'body', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def partial_update_run_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def partial_update_run_certification(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.partial_update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def partial_update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """partial_update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.partial_update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method partial_update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `partial_update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -7965,14 +12189,19 @@ class ApiApi(object):
         :param RunHistogram body:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8002,14 +12231,19 @@ class ApiApi(object):
         :param RunHistogram body:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8020,7 +12254,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8051,22 +12285,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -8178,21 +12422,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8234,21 +12483,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8259,7 +12513,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean', 'rms', 'skewness', 'kurtosis', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8290,22 +12544,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -8417,21 +12681,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8473,21 +12742,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -8498,7 +12772,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean', 'rms', 'skewness', 'kurtosis', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8529,22 +12803,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -9703,6 +13987,163 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def retrieve_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """retrieve_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.retrieve_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.retrieve_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.retrieve_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def retrieve_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """retrieve_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.retrieve_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method retrieve_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `retrieve_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def retrieve_lumisection_histogram1_d(self, id, **kwargs):  # noqa: E501
         """retrieve_lumisection_histogram1_d  # noqa: E501
 
@@ -9713,8 +14154,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -9743,8 +14186,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -9757,7 +14202,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9784,10 +14229,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -9842,8 +14291,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -9872,8 +14323,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -9886,7 +14339,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9913,10 +14366,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -10054,16 +14511,16 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def retrieve_run(self, id, **kwargs):  # noqa: E501
+    def retrieve_run(self, run_number, **kwargs):  # noqa: E501
         """retrieve_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.retrieve_run(id, async_req=True)
+        >>> thread = api.retrieve_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param str run_number: run_number
         :param str run_date: run_date
         :param str year: year
@@ -10079,21 +14536,21 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.retrieve_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.retrieve_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.retrieve_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.retrieve_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def retrieve_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def retrieve_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """retrieve_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.retrieve_run_with_http_info(id, async_req=True)
+        >>> thread = api.retrieve_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param str run_number: run_number
         :param str run_date: run_date
         :param str year: year
@@ -10108,7 +14565,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10123,16 +14580,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `retrieve_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `retrieve_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -10168,7 +14625,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'GET',
+            '/api/runs/{run_number}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -10176,6 +14633,203 @@ class ApiApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Run',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def retrieve_run_certification(self, id, **kwargs):  # noqa: E501
+        """retrieve_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.retrieve_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.retrieve_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.retrieve_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def retrieve_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """retrieve_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.retrieve_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method retrieve_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `retrieve_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -10195,14 +14849,19 @@ class ApiApi(object):
         :param str id: A unique integer value identifying this run histogram. (required)
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -10231,14 +14890,19 @@ class ApiApi(object):
         :param str id: A unique integer value identifying this run histogram. (required)
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -10249,7 +14913,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10280,22 +14944,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -10618,13 +15292,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
         if 'id' in params:
             form_params.append(('id', params['id']))  # noqa: E501
         if 'filepath' in params:
@@ -10649,13 +15320,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
 
         body_params = None
         if 'body' in params:
@@ -10709,9 +15377,9 @@ class ApiApi(object):
         :param str granularity2:
         :param datetime created2:
         :param datetime modified2:
-        :param list[str] run_histograms2:
-        :param list[str] lumisection_histograms_1d2:
-        :param list[str] lumisection_histograms_2d2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
         :param int id2:
         :param str filepath:
         :param float filesize:
@@ -10723,9 +15391,9 @@ class ApiApi(object):
         :param str granularity:
         :param datetime created:
         :param datetime modified:
-        :param list[str] run_histograms:
-        :param list[str] lumisection_histograms_1d:
-        :param list[str] lumisection_histograms_2d:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
         :return: HistogramDataFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10759,9 +15427,9 @@ class ApiApi(object):
         :param str granularity2:
         :param datetime created2:
         :param datetime modified2:
-        :param list[str] run_histograms2:
-        :param list[str] lumisection_histograms_1d2:
-        :param list[str] lumisection_histograms_2d2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
         :param int id2:
         :param str filepath:
         :param float filesize:
@@ -10773,9 +15441,9 @@ class ApiApi(object):
         :param str granularity:
         :param datetime created:
         :param datetime modified:
-        :param list[str] run_histograms:
-        :param list[str] lumisection_histograms_1d:
-        :param list[str] lumisection_histograms_2d:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
         :return: HistogramDataFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10837,13 +15505,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
         if 'id' in params:
             form_params.append(('id', params['id']))  # noqa: E501
         if 'filepath' in params:
@@ -10868,13 +15533,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
 
         body_params = None
         if 'body' in params:
@@ -10928,9 +15590,9 @@ class ApiApi(object):
         :param str granularity2:
         :param datetime created2:
         :param datetime modified2:
-        :param list[str] run_histograms2:
-        :param list[str] lumisection_histograms_1d2:
-        :param list[str] lumisection_histograms_2d2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
         :param int id2:
         :param str filepath:
         :param float filesize:
@@ -10942,9 +15604,9 @@ class ApiApi(object):
         :param str granularity:
         :param datetime created:
         :param datetime modified:
-        :param list[str] run_histograms:
-        :param list[str] lumisection_histograms_1d:
-        :param list[str] lumisection_histograms_2d:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
         :return: HistogramDataFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10978,9 +15640,9 @@ class ApiApi(object):
         :param str granularity2:
         :param datetime created2:
         :param datetime modified2:
-        :param list[str] run_histograms2:
-        :param list[str] lumisection_histograms_1d2:
-        :param list[str] lumisection_histograms_2d2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
         :param int id2:
         :param str filepath:
         :param float filesize:
@@ -10992,9 +15654,9 @@ class ApiApi(object):
         :param str granularity:
         :param datetime created:
         :param datetime modified:
-        :param list[str] run_histograms:
-        :param list[str] lumisection_histograms_1d:
-        :param list[str] lumisection_histograms_2d:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
         :return: HistogramDataFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11056,13 +15718,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
         if 'id' in params:
             form_params.append(('id', params['id']))  # noqa: E501
         if 'filepath' in params:
@@ -11087,13 +15746,10 @@ class ApiApi(object):
             form_params.append(('modified', params['modified']))  # noqa: E501
         if 'run_histograms' in params:
             form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-            collection_formats['run_histograms'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_1d' in params:
             form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-            collection_formats['lumisection_histograms_1d'] = 'multi'  # noqa: E501
         if 'lumisection_histograms_2d' in params:
             form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-            collection_formats['lumisection_histograms_2d'] = 'multi'  # noqa: E501
 
         body_params = None
         if 'body' in params:
@@ -11264,10 +15920,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -11295,10 +15951,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -11403,10 +16059,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -11434,10 +16090,10 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection. (required)
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
-        :param int run2:
+        :param str run2:
         :param int ls_number2:
         :param datetime _date2:
         :param str run: run
@@ -11532,6 +16188,837 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param LumisectionCertification body:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param LumisectionCertification body:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'body', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_lumisection_certification(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_lumisection_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_lumisection_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_lumisection_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_lumisection_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this lumisection certification. (required)
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param int lumisection2:
+        :param datetime _date2:
+        :param bool rr_is_golden_json2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param str lumisection: lumisection
+        :param str _date: date
+        :param str rr_is_golden_json: rr_is_golden_json
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str run: run
+        :return: LumisectionCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'id2', 'run2', 'lumisection2', '_date2', 'rr_is_golden_json2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'lumisection', '_date', 'rr_is_golden_json', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'run']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_lumisection_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_lumisection_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'lumisection' in params:
+            query_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            query_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if 'lumisection' in params:
+            form_params.append(('lumisection', params['lumisection']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_golden_json' in params:
+            form_params.append(('rr_is_golden_json', params['rr_is_golden_json']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/lumisection_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LumisectionCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_lumisection_histogram1_d(self, id, **kwargs):  # noqa: E501
         """update_lumisection_histogram1_d  # noqa: E501
 
@@ -11543,8 +17030,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
         :param LumisectionHistogram1D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -11574,8 +17063,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram1d. (required)
         :param LumisectionHistogram1D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -11588,7 +17079,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -11615,10 +17106,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -11741,8 +17236,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -11791,8 +17288,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -11805,7 +17304,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -11832,10 +17331,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -11958,8 +17461,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12008,8 +17513,10 @@ class ApiApi(object):
         :param float x_max:
         :param int x_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12022,7 +17529,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12049,10 +17556,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -12156,8 +17667,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
         :param LumisectionHistogram2D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12187,8 +17700,10 @@ class ApiApi(object):
         :param async_req bool
         :param str id: A unique integer value identifying this lumisection histogram2d. (required)
         :param LumisectionHistogram2D body:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12201,7 +17716,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12228,10 +17743,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -12351,7 +17870,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -12364,7 +17883,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -12372,8 +17891,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12407,7 +17928,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -12420,7 +17941,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -12428,8 +17949,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12442,7 +17965,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12469,10 +17992,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -12592,7 +18119,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -12605,7 +18132,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -12613,8 +18140,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12648,7 +18177,7 @@ class ApiApi(object):
         :param int lumisection2:
         :param str title2:
         :param int entries2:
-        :param list[float] data2:
+        :param list[list[float]] data2:
         :param float x_min2:
         :param float x_max2:
         :param int x_bin2:
@@ -12661,7 +18190,7 @@ class ApiApi(object):
         :param int lumisection:
         :param str title2:
         :param int entries:
-        :param list[float] data:
+        :param list[list[float]] data:
         :param float x_min:
         :param float x_max:
         :param int x_bin:
@@ -12669,8 +18198,10 @@ class ApiApi(object):
         :param float y_min:
         :param int y_bin:
         :param int source_data_file:
+        :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
+        :param str lumisection__ls_number: lumisection__ls_number
         :param str lumisection__ls_number__gte: lumisection__ls_number__gte
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
@@ -12683,7 +18214,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12710,10 +18241,14 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'lumisection__run__run_number' in params:
+            query_params.append(('lumisection__run__run_number', params['lumisection__run__run_number']))  # noqa: E501
         if 'lumisection__run__run_number__gte' in params:
             query_params.append(('lumisection__run__run_number__gte', params['lumisection__run__run_number__gte']))  # noqa: E501
         if 'lumisection__run__run_number__lte' in params:
             query_params.append(('lumisection__run__run_number__lte', params['lumisection__run__run_number__lte']))  # noqa: E501
+        if 'lumisection__ls_number' in params:
+            query_params.append(('lumisection__ls_number', params['lumisection__ls_number']))  # noqa: E501
         if 'lumisection__ls_number__gte' in params:
             query_params.append(('lumisection__ls_number__gte', params['lumisection__ls_number__gte']))  # noqa: E501
         if 'lumisection__ls_number__lte' in params:
@@ -13295,18 +18830,18 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_run(self, id, **kwargs):  # noqa: E501
+    def update_run(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run(id, async_req=True)
+        >>> thread = api.update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param Run body:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13321,23 +18856,23 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run_with_http_info(id, async_req=True)
+        >>> thread = api.update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param Run body:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13351,7 +18886,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'body', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -13366,16 +18901,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -13425,7 +18960,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PUT',
+            '/api/runs/{run_number}/', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -13440,21 +18975,21 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_run(self, id, **kwargs):  # noqa: E501
+    def update_run(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run(id, async_req=True)
+        >>> thread = api.update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13469,26 +19004,26 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run_with_http_info(id, async_req=True)
+        >>> thread = api.update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13502,7 +19037,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -13517,16 +19052,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -13576,7 +19111,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PUT',
+            '/api/runs/{run_number}/', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -13591,21 +19126,21 @@ class ApiApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_run(self, id, **kwargs):  # noqa: E501
+    def update_run(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run(id, async_req=True)
+        >>> thread = api.update_run(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13620,26 +19155,26 @@ class ApiApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            return self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_run_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.update_run_with_http_info(run_number, **kwargs)  # noqa: E501
             return data
 
-    def update_run_with_http_info(self, id, **kwargs):  # noqa: E501
+    def update_run_with_http_info(self, run_number, **kwargs):  # noqa: E501
         """update_run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_run_with_http_info(id, async_req=True)
+        >>> thread = api.update_run_with_http_info(run_number, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: A unique integer value identifying this run. (required)
+        :param str run_number: A unique value identifying this run. (required)
         :param int run_number2:
         :param datetime _date2:
         :param int run_number2:
         :param datetime _date2:
-        :param str run_number: run_number
+        :param str run_number2: run_number
         :param str run_date: run_date
         :param str year: year
         :param str period: period
@@ -13653,7 +19188,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
+        all_params = ['run_number', 'run_number2', '_date2', 'run_number2', '_date2', 'run_number2', 'run_date', 'year', 'period', '_date', 'oms_fill', 'oms_lumisections', 'oms_initial_lumi', 'oms_end_lumi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -13668,16 +19203,16 @@ class ApiApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_run`")  # noqa: E501
+        # verify the required parameter 'run_number' is set
+        if ('run_number' not in params or
+                params['run_number'] is None):
+            raise ValueError("Missing the required parameter `run_number` when calling `update_run`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'run_number' in params:
+            path_params['run_number'] = params['run_number']  # noqa: E501
 
         query_params = []
         if 'run_number' in params:
@@ -13727,7 +19262,7 @@ class ApiApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/runs/{id}/', 'PUT',
+            '/api/runs/{run_number}/', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -13735,6 +19270,1157 @@ class ApiApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Run',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_run_certification(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param RunCertification body:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param RunCertification body:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'body', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_run_certification(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_run_certification(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_run_certification_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_run_certification_with_http_info(self, id, **kwargs):  # noqa: E501
+        """update_run_certification  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_run_certification_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this run certification. (required)
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param int id2:
+        :param int run2:
+        :param datetime _date2:
+        :param bool rr_is_pixel_good2:
+        :param bool rr_is_strip_good2:
+        :param bool rr_is_ecal_good2:
+        :param bool rr_is_hcal_good2:
+        :param bool rr_is_dt_good2:
+        :param bool rr_is_csc_good2:
+        :param bool rr_is_tracking_good2:
+        :param bool rr_is_muon_good2:
+        :param bool rr_is_egamma_good2:
+        :param bool rr_is_tau_good2:
+        :param bool rr_is_jetmet_good2:
+        :param bool rr_is_btag_good2:
+        :param float rr_frac_pixel_good2:
+        :param float rr_frac_strip_good2:
+        :param float rr_frac_ecal_good2:
+        :param float rr_frac_hcal_good2:
+        :param float rr_frac_dt_good2:
+        :param float rr_frac_csc_good2:
+        :param float rr_frac_tracking_good2:
+        :param float rr_frac_muon_good2:
+        :param float rr_frac_egamma_good2:
+        :param float rr_frac_tau_good2:
+        :param float rr_frac_jetmet_good2:
+        :param float rr_frac_btag_good2:
+        :param str run: run
+        :param str _date: date
+        :param str rr_is_pixel_good: rr_is_pixel_good
+        :param str rr_is_strip_good: rr_is_strip_good
+        :param str rr_is_ecal_good: rr_is_ecal_good
+        :param str rr_is_hcal_good: rr_is_hcal_good
+        :param str rr_is_dt_good: rr_is_dt_good
+        :param str rr_is_csc_good: rr_is_csc_good
+        :param str rr_is_tracking_good: rr_is_tracking_good
+        :param str rr_is_muon_good: rr_is_muon_good
+        :param str rr_is_egamma_good: rr_is_egamma_good
+        :param str rr_is_tau_good: rr_is_tau_good
+        :param str rr_is_jetmet_good: rr_is_jetmet_good
+        :param str rr_is_btag_good: rr_is_btag_good
+        :param str rr_frac_pixel_good: rr_frac_pixel_good
+        :param str rr_frac_strip_good: rr_frac_strip_good
+        :param str rr_frac_ecal_good: rr_frac_ecal_good
+        :param str rr_frac_hcal_good: rr_frac_hcal_good
+        :param str rr_frac_dt_good: rr_frac_dt_good
+        :param str rr_frac_csc_good: rr_frac_csc_good
+        :param str rr_frac_tracking_good: rr_frac_tracking_good
+        :param str rr_frac_muon_good: rr_frac_muon_good
+        :param str rr_frac_egamma_good: rr_frac_egamma_good
+        :param str rr_frac_tau_good: rr_frac_tau_good
+        :param str rr_frac_jetmet_good: rr_frac_jetmet_good
+        :param str rr_frac_btag_good: rr_frac_btag_good
+        :return: RunCertification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'id2', 'run2', '_date2', 'rr_is_pixel_good2', 'rr_is_strip_good2', 'rr_is_ecal_good2', 'rr_is_hcal_good2', 'rr_is_dt_good2', 'rr_is_csc_good2', 'rr_is_tracking_good2', 'rr_is_muon_good2', 'rr_is_egamma_good2', 'rr_is_tau_good2', 'rr_is_jetmet_good2', 'rr_is_btag_good2', 'rr_frac_pixel_good2', 'rr_frac_strip_good2', 'rr_frac_ecal_good2', 'rr_frac_hcal_good2', 'rr_frac_dt_good2', 'rr_frac_csc_good2', 'rr_frac_tracking_good2', 'rr_frac_muon_good2', 'rr_frac_egamma_good2', 'rr_frac_tau_good2', 'rr_frac_jetmet_good2', 'rr_frac_btag_good2', 'run', '_date', 'rr_is_pixel_good', 'rr_is_strip_good', 'rr_is_ecal_good', 'rr_is_hcal_good', 'rr_is_dt_good', 'rr_is_csc_good', 'rr_is_tracking_good', 'rr_is_muon_good', 'rr_is_egamma_good', 'rr_is_tau_good', 'rr_is_jetmet_good', 'rr_is_btag_good', 'rr_frac_pixel_good', 'rr_frac_strip_good', 'rr_frac_ecal_good', 'rr_frac_hcal_good', 'rr_frac_dt_good', 'rr_frac_csc_good', 'rr_frac_tracking_good', 'rr_frac_muon_good', 'rr_frac_egamma_good', 'rr_frac_tau_good', 'rr_frac_jetmet_good', 'rr_frac_btag_good']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_run_certification" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_run_certification`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+        if 'run' in params:
+            query_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            query_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            query_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            query_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            query_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            query_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            query_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            query_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            query_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            query_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            query_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            query_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            query_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            query_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            query_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            query_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            query_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            query_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            query_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            query_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            query_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            query_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            query_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            query_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            query_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'run' in params:
+            form_params.append(('run', params['run']))  # noqa: E501
+        if '_date' in params:
+            form_params.append(('date', params['_date']))  # noqa: E501
+        if 'rr_is_pixel_good' in params:
+            form_params.append(('rr_is_pixel_good', params['rr_is_pixel_good']))  # noqa: E501
+        if 'rr_is_strip_good' in params:
+            form_params.append(('rr_is_strip_good', params['rr_is_strip_good']))  # noqa: E501
+        if 'rr_is_ecal_good' in params:
+            form_params.append(('rr_is_ecal_good', params['rr_is_ecal_good']))  # noqa: E501
+        if 'rr_is_hcal_good' in params:
+            form_params.append(('rr_is_hcal_good', params['rr_is_hcal_good']))  # noqa: E501
+        if 'rr_is_dt_good' in params:
+            form_params.append(('rr_is_dt_good', params['rr_is_dt_good']))  # noqa: E501
+        if 'rr_is_csc_good' in params:
+            form_params.append(('rr_is_csc_good', params['rr_is_csc_good']))  # noqa: E501
+        if 'rr_is_tracking_good' in params:
+            form_params.append(('rr_is_tracking_good', params['rr_is_tracking_good']))  # noqa: E501
+        if 'rr_is_muon_good' in params:
+            form_params.append(('rr_is_muon_good', params['rr_is_muon_good']))  # noqa: E501
+        if 'rr_is_egamma_good' in params:
+            form_params.append(('rr_is_egamma_good', params['rr_is_egamma_good']))  # noqa: E501
+        if 'rr_is_tau_good' in params:
+            form_params.append(('rr_is_tau_good', params['rr_is_tau_good']))  # noqa: E501
+        if 'rr_is_jetmet_good' in params:
+            form_params.append(('rr_is_jetmet_good', params['rr_is_jetmet_good']))  # noqa: E501
+        if 'rr_is_btag_good' in params:
+            form_params.append(('rr_is_btag_good', params['rr_is_btag_good']))  # noqa: E501
+        if 'rr_frac_pixel_good' in params:
+            form_params.append(('rr_frac_pixel_good', params['rr_frac_pixel_good']))  # noqa: E501
+        if 'rr_frac_strip_good' in params:
+            form_params.append(('rr_frac_strip_good', params['rr_frac_strip_good']))  # noqa: E501
+        if 'rr_frac_ecal_good' in params:
+            form_params.append(('rr_frac_ecal_good', params['rr_frac_ecal_good']))  # noqa: E501
+        if 'rr_frac_hcal_good' in params:
+            form_params.append(('rr_frac_hcal_good', params['rr_frac_hcal_good']))  # noqa: E501
+        if 'rr_frac_dt_good' in params:
+            form_params.append(('rr_frac_dt_good', params['rr_frac_dt_good']))  # noqa: E501
+        if 'rr_frac_csc_good' in params:
+            form_params.append(('rr_frac_csc_good', params['rr_frac_csc_good']))  # noqa: E501
+        if 'rr_frac_tracking_good' in params:
+            form_params.append(('rr_frac_tracking_good', params['rr_frac_tracking_good']))  # noqa: E501
+        if 'rr_frac_muon_good' in params:
+            form_params.append(('rr_frac_muon_good', params['rr_frac_muon_good']))  # noqa: E501
+        if 'rr_frac_egamma_good' in params:
+            form_params.append(('rr_frac_egamma_good', params['rr_frac_egamma_good']))  # noqa: E501
+        if 'rr_frac_tau_good' in params:
+            form_params.append(('rr_frac_tau_good', params['rr_frac_tau_good']))  # noqa: E501
+        if 'rr_frac_jetmet_good' in params:
+            form_params.append(('rr_frac_jetmet_good', params['rr_frac_jetmet_good']))  # noqa: E501
+        if 'rr_frac_btag_good' in params:
+            form_params.append(('rr_frac_btag_good', params['rr_frac_btag_good']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/run_certifications/{id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RunCertification',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -13755,14 +20441,19 @@ class ApiApi(object):
         :param RunHistogram body:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -13792,14 +20483,19 @@ class ApiApi(object):
         :param RunHistogram body:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -13810,7 +20506,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -13841,22 +20537,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -13968,21 +20674,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -14024,21 +20735,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -14049,7 +20765,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean', 'rms', 'skewness', 'kurtosis', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -14080,22 +20796,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
@@ -14207,21 +20933,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -14263,21 +20994,26 @@ class ApiApi(object):
         :param str title2:
         :param str primary_dataset2:
         :param int entries:
-        :param float mean:
-        :param float rms:
-        :param float skewness:
-        :param float kurtosis:
+        :param float mean2:
+        :param float rms2:
+        :param float skewness2:
+        :param float kurtosis2:
         :param int source_data_file:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
+        :param str run__run_number: run__run_number
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str mean: mean
         :param str mean__gte: mean__gte
         :param str mean__lte: mean__lte
+        :param str rms: rms
         :param str rms__gte: rms__gte
         :param str rms__lte: rms__lte
+        :param str skewness: skewness
         :param str skewness__gte: skewness__gte
         :param str skewness__lte: skewness__lte
+        :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
         :param str title: title
@@ -14288,7 +21024,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean', 'rms', 'skewness', 'kurtosis', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'entries__gte', 'entries__lte', 'mean__gte', 'mean__lte', 'rms__gte', 'rms__lte', 'skewness__gte', 'skewness__lte', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -14319,22 +21055,32 @@ class ApiApi(object):
             query_params.append(('run__run_number__gte', params['run__run_number__gte']))  # noqa: E501
         if 'run__run_number__lte' in params:
             query_params.append(('run__run_number__lte', params['run__run_number__lte']))  # noqa: E501
+        if 'run__run_number' in params:
+            query_params.append(('run__run_number', params['run__run_number']))  # noqa: E501
         if 'entries__gte' in params:
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'mean' in params:
+            query_params.append(('mean', params['mean']))  # noqa: E501
         if 'mean__gte' in params:
             query_params.append(('mean__gte', params['mean__gte']))  # noqa: E501
         if 'mean__lte' in params:
             query_params.append(('mean__lte', params['mean__lte']))  # noqa: E501
+        if 'rms' in params:
+            query_params.append(('rms', params['rms']))  # noqa: E501
         if 'rms__gte' in params:
             query_params.append(('rms__gte', params['rms__gte']))  # noqa: E501
         if 'rms__lte' in params:
             query_params.append(('rms__lte', params['rms__lte']))  # noqa: E501
+        if 'skewness' in params:
+            query_params.append(('skewness', params['skewness']))  # noqa: E501
         if 'skewness__gte' in params:
             query_params.append(('skewness__gte', params['skewness__gte']))  # noqa: E501
         if 'skewness__lte' in params:
             query_params.append(('skewness__lte', params['skewness__lte']))  # noqa: E501
+        if 'kurtosis' in params:
+            query_params.append(('kurtosis', params['kurtosis']))  # noqa: E501
         if 'kurtosis__gte' in params:
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:

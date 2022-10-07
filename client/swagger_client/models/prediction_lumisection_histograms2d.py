@@ -33,7 +33,7 @@ class PredictionLumisectionHistograms2d(object):
         'lumisection': 'int',
         'title': 'str',
         'entries': 'int',
-        'data': 'list[float]',
+        'data': 'list[list[float]]',
         'x_min': 'float',
         'x_max': 'float',
         'x_bin': 'int',
@@ -214,7 +214,7 @@ class PredictionLumisectionHistograms2d(object):
 
 
         :return: The data of this PredictionLumisectionHistograms2d.  # noqa: E501
-        :rtype: list[float]
+        :rtype: list[list[float]]
         """
         return self._data
 
@@ -224,7 +224,7 @@ class PredictionLumisectionHistograms2d(object):
 
 
         :param data: The data of this PredictionLumisectionHistograms2d.  # noqa: E501
-        :type: list[float]
+        :type: list[list[float]]
         """
 
         self._data = data
