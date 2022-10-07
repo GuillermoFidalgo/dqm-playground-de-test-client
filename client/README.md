@@ -203,9 +203,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_instance.destroy_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_instance.destroy_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_lumisection_histogram1_d: %s\n" % e)
 
@@ -223,9 +224,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_instance.destroy_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_instance.destroy_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_lumisection_histogram2_d: %s\n" % e)
 
@@ -314,9 +316,10 @@ kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
 primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_instance.destroy_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_instance.destroy_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
 except ApiException as e:
     print("Exception when calling ApiApi->destroy_run_histogram: %s\n" % e)
 
@@ -395,9 +398,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.list_lumisection_histogram1_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.list_lumisection_histogram1_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_lumisection_histogram1_ds: %s\n" % e)
@@ -416,9 +420,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.list_lumisection_histogram2_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.list_lumisection_histogram2_ds(page=page, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_lumisection_histogram2_ds: %s\n" % e)
@@ -506,9 +511,10 @@ kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
 primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.list_run_histograms(page=page, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.list_run_histograms(page=page, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->list_run_histograms: %s\n" % e)
@@ -609,9 +615,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.partial_update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.partial_update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_lumisection_histogram1_d: %s\n" % e)
@@ -631,9 +638,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.partial_update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.partial_update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_lumisection_histogram2_d: %s\n" % e)
@@ -730,9 +738,10 @@ kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
 primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.partial_update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.partial_update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->partial_update_run_histogram: %s\n" % e)
@@ -830,9 +839,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.retrieve_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.retrieve_lumisection_histogram1_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_lumisection_histogram1_d: %s\n" % e)
@@ -851,9 +861,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.retrieve_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.retrieve_lumisection_histogram2_d(id, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_lumisection_histogram2_d: %s\n" % e)
@@ -946,9 +957,10 @@ kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
 primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.retrieve_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.retrieve_run_histogram(id, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->retrieve_run_histogram: %s\n" % e)
@@ -1041,9 +1053,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.update_lumisection_histogram1_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_lumisection_histogram1_d: %s\n" % e)
@@ -1063,9 +1076,10 @@ entries__lte = 'entries__lte_example' # str | entries__lte (optional)
 title = 'title_example' # str | title (optional)
 lumisection__ls_number__in = 'lumisection__ls_number__in_example' # str | lumisection__ls_number__in (optional)
 lumisection__run__run_number__in = 'lumisection__run__run_number__in_example' # str | lumisection__run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in)
+    api_response = api_instance.update_lumisection_histogram2_d(id, body=body, lumisection__run__run_number=lumisection__run__run_number, lumisection__run__run_number__gte=lumisection__run__run_number__gte, lumisection__run__run_number__lte=lumisection__run__run_number__lte, lumisection__ls_number=lumisection__ls_number, lumisection__ls_number__gte=lumisection__ls_number__gte, lumisection__ls_number__lte=lumisection__ls_number__lte, entries__gte=entries__gte, entries__lte=entries__lte, title=title, lumisection__ls_number__in=lumisection__ls_number__in, lumisection__run__run_number__in=lumisection__run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_lumisection_histogram2_d: %s\n" % e)
@@ -1162,9 +1176,10 @@ kurtosis__lte = 'kurtosis__lte_example' # str | kurtosis__lte (optional)
 title = 'title_example' # str | title (optional)
 primary_dataset = 'primary_dataset_example' # str | primary_dataset (optional)
 run__run_number__in = 'run__run_number__in_example' # str | run__run_number__in (optional)
+source_data_file__filepath__contains = 'source_data_file__filepath__contains_example' # str | source_data_file__filepath__contains (optional)
 
 try:
-    api_response = api_instance.update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in)
+    api_response = api_instance.update_run_histogram(id, body=body, run__run_number__gte=run__run_number__gte, run__run_number__lte=run__run_number__lte, run__run_number=run__run_number, entries__gte=entries__gte, entries__lte=entries__lte, mean=mean, mean__gte=mean__gte, mean__lte=mean__lte, rms=rms, rms__gte=rms__gte, rms__lte=rms__lte, skewness=skewness, skewness__gte=skewness__gte, skewness__lte=skewness__lte, kurtosis=kurtosis, kurtosis__gte=kurtosis__gte, kurtosis__lte=kurtosis__lte, title=title, primary_dataset=primary_dataset, run__run_number__in=run__run_number__in, source_data_file__filepath__contains=source_data_file__filepath__contains)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->update_run_histogram: %s\n" % e)
