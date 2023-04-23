@@ -21,6 +21,7 @@ from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
 from swagger_client.models.histogram_data_file import HistogramDataFile
+from swagger_client.models.histogram_data_file_contents import HistogramDataFileContents
 from swagger_client.models.inline_response200 import InlineResponse200
 from swagger_client.models.inline_response2001 import InlineResponse2001
 from swagger_client.models.inline_response20010 import InlineResponse20010

@@ -5132,6 +5132,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -5165,6 +5166,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -5174,7 +5176,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5217,6 +5219,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -5269,6 +5273,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -5302,6 +5307,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -5311,7 +5317,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5354,6 +5360,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -5822,6 +5830,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -5864,6 +5873,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -5873,7 +5883,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5934,6 +5944,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -6156,6 +6168,7 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str id: id
         :param str data_era: data_era
         :param str data_dimensionality: data_dimensionality
         :param str granularity: granularity
@@ -6184,6 +6197,7 @@ class ApiApi(object):
 
         :param async_req bool
         :param int page: A page number within the paginated result set.
+        :param str id: id
         :param str data_era: data_era
         :param str data_dimensionality: data_dimensionality
         :param str granularity: granularity
@@ -6196,7 +6210,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'data_era', 'data_dimensionality', 'granularity', 'processing_complete', 'entries_total__gt', 'entries_total__lt', 'filepath__contains']  # noqa: E501
+        all_params = ['page', 'id', 'data_era', 'data_dimensionality', 'granularity', 'processing_complete', 'entries_total__gt', 'entries_total__lt', 'filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6219,6 +6233,8 @@ class ApiApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
         if 'data_era' in params:
             query_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'data_dimensionality' in params:
@@ -6434,6 +6450,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -6467,6 +6484,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -6476,7 +6494,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6515,6 +6533,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -6571,6 +6591,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -6604,6 +6625,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -6613,7 +6635,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['page', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6652,6 +6674,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -7104,6 +7128,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -7146,6 +7171,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -7155,7 +7181,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['page', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7212,6 +7238,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -8810,6 +8838,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -8844,6 +8873,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -8853,7 +8883,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8896,6 +8926,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -9011,7 +9043,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9020,6 +9052,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9064,7 +9097,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9073,6 +9106,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9082,7 +9116,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9125,6 +9159,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -9240,7 +9276,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9249,6 +9285,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9293,7 +9330,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9302,6 +9339,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9311,7 +9349,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9354,6 +9392,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -9459,6 +9499,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9493,6 +9534,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9502,7 +9544,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9545,6 +9587,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -9678,7 +9722,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9687,6 +9731,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9737,7 +9782,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9746,6 +9791,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9755,7 +9801,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9798,6 +9844,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -9931,7 +9979,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9940,6 +9988,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -9990,7 +10039,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -9999,6 +10048,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -10008,7 +10058,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -10051,6 +10101,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -12252,6 +12304,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12295,6 +12348,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12304,7 +12358,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12365,6 +12419,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -12478,7 +12534,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -12496,6 +12552,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12540,7 +12597,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -12558,6 +12615,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12567,7 +12625,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12628,6 +12686,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -12741,7 +12801,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -12759,6 +12819,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12803,7 +12864,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -12821,6 +12882,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -12830,7 +12892,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -12891,6 +12953,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -13827,6 +13891,7 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this histogram data file. (required)
+        :param str id: id
         :param str data_era: data_era
         :param str data_dimensionality: data_dimensionality
         :param str granularity: granularity
@@ -13855,6 +13920,7 @@ class ApiApi(object):
 
         :param async_req bool
         :param str id: A unique integer value identifying this histogram data file. (required)
+        :param str id: id
         :param str data_era: data_era
         :param str data_dimensionality: data_dimensionality
         :param str granularity: granularity
@@ -13867,7 +13933,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'data_era', 'data_dimensionality', 'granularity', 'processing_complete', 'entries_total__gt', 'entries_total__lt', 'filepath__contains']  # noqa: E501
+        all_params = ['id', 'id', 'data_era', 'data_dimensionality', 'granularity', 'processing_complete', 'entries_total__gt', 'entries_total__lt', 'filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -13894,6 +13960,8 @@ class ApiApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
         if 'data_era' in params:
             query_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'data_dimensionality' in params:
@@ -14222,6 +14290,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -14255,6 +14324,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -14264,7 +14334,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -14307,6 +14377,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -14363,6 +14435,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -14396,6 +14469,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -14405,7 +14479,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -14448,6 +14522,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -14932,6 +15008,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -14974,6 +15051,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -14983,7 +15061,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -15044,6 +15122,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -15346,8 +15426,6 @@ class ApiApi(object):
             form_params.append(('filepath', params['filepath']))  # noqa: E501
         if 'filesize' in params:
             form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
         if 'data_era' in params:
             form_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'entries_total' in params:
@@ -15356,8 +15434,9 @@ class ApiApi(object):
             form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
         if 'percentage_processed' in params:
             form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
         if 'created' in params:
             form_params.append(('created', params['created']))  # noqa: E501
         if 'modified' in params:
@@ -15374,8 +15453,6 @@ class ApiApi(object):
             form_params.append(('filepath', params['filepath']))  # noqa: E501
         if 'filesize' in params:
             form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
         if 'data_era' in params:
             form_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'entries_total' in params:
@@ -15384,221 +15461,9 @@ class ApiApi(object):
             form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
         if 'percentage_processed' in params:
             form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
-        if 'created' in params:
-            form_params.append(('created', params['created']))  # noqa: E501
-        if 'modified' in params:
-            form_params.append(('modified', params['modified']))  # noqa: E501
-        if 'run_histograms' in params:
-            form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-        if 'lumisection_histograms_1d' in params:
-            form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-        if 'lumisection_histograms_2d' in params:
-            form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/histogram_data_files/{id}/start_parsing/', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='HistogramDataFile',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def start_parsing_histogram_data_file(self, id, **kwargs):  # noqa: E501
-        """start_parsing_histogram_data_file  # noqa: E501
-
-        Start parsing a specific HistogramDataFile, identified by pk  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_parsing_histogram_data_file(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id: A unique integer value identifying this histogram data file. (required)
-        :param int id2:
-        :param str filepath2:
-        :param float filesize2:
-        :param int data_dimensionality2:
-        :param str data_era2:
-        :param int entries_total2:
-        :param int entries_processed2:
-        :param str percentage_processed2:
-        :param str granularity2:
-        :param datetime created2:
-        :param datetime modified2:
-        :param int run_histograms2:
-        :param int lumisection_histograms_1d2:
-        :param int lumisection_histograms_2d2:
-        :param int id2:
-        :param str filepath:
-        :param float filesize:
-        :param int data_dimensionality:
-        :param str data_era:
-        :param int entries_total:
-        :param int entries_processed:
-        :param str percentage_processed:
-        :param str granularity:
-        :param datetime created:
-        :param datetime modified:
-        :param int run_histograms:
-        :param int lumisection_histograms_1d:
-        :param int lumisection_histograms_2d:
-        :return: HistogramDataFile
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.start_parsing_histogram_data_file_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.start_parsing_histogram_data_file_with_http_info(id, **kwargs)  # noqa: E501
-            return data
-
-    def start_parsing_histogram_data_file_with_http_info(self, id, **kwargs):  # noqa: E501
-        """start_parsing_histogram_data_file  # noqa: E501
-
-        Start parsing a specific HistogramDataFile, identified by pk  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_parsing_histogram_data_file_with_http_info(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id: A unique integer value identifying this histogram data file. (required)
-        :param int id2:
-        :param str filepath2:
-        :param float filesize2:
-        :param int data_dimensionality2:
-        :param str data_era2:
-        :param int entries_total2:
-        :param int entries_processed2:
-        :param str percentage_processed2:
-        :param str granularity2:
-        :param datetime created2:
-        :param datetime modified2:
-        :param int run_histograms2:
-        :param int lumisection_histograms_1d2:
-        :param int lumisection_histograms_2d2:
-        :param int id2:
-        :param str filepath:
-        :param float filesize:
-        :param int data_dimensionality:
-        :param str data_era:
-        :param int entries_total:
-        :param int entries_processed:
-        :param str percentage_processed:
-        :param str granularity:
-        :param datetime created:
-        :param datetime modified:
-        :param int run_histograms:
-        :param int lumisection_histograms_1d:
-        :param int lumisection_histograms_2d:
-        :return: HistogramDataFile
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['id', 'id2', 'filepath2', 'filesize2', 'data_dimensionality2', 'data_era2', 'entries_total2', 'entries_processed2', 'percentage_processed2', 'granularity2', 'created2', 'modified2', 'run_histograms2', 'lumisection_histograms_1d2', 'lumisection_histograms_2d2', 'id2', 'filepath', 'filesize', 'data_dimensionality', 'data_era', 'entries_total', 'entries_processed', 'percentage_processed', 'granularity', 'created', 'modified', 'run_histograms', 'lumisection_histograms_1d', 'lumisection_histograms_2d']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method start_parsing_histogram_data_file" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `start_parsing_histogram_data_file`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-        if 'id' in params:
-            form_params.append(('id', params['id']))  # noqa: E501
-        if 'filepath' in params:
-            form_params.append(('filepath', params['filepath']))  # noqa: E501
-        if 'filesize' in params:
-            form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
-        if 'data_era' in params:
-            form_params.append(('data_era', params['data_era']))  # noqa: E501
-        if 'entries_total' in params:
-            form_params.append(('entries_total', params['entries_total']))  # noqa: E501
-        if 'entries_processed' in params:
-            form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
-        if 'percentage_processed' in params:
-            form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
-        if 'created' in params:
-            form_params.append(('created', params['created']))  # noqa: E501
-        if 'modified' in params:
-            form_params.append(('modified', params['modified']))  # noqa: E501
-        if 'run_histograms' in params:
-            form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
-        if 'lumisection_histograms_1d' in params:
-            form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
-        if 'lumisection_histograms_2d' in params:
-            form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
-        if 'id' in params:
-            form_params.append(('id', params['id']))  # noqa: E501
-        if 'filepath' in params:
-            form_params.append(('filepath', params['filepath']))  # noqa: E501
-        if 'filesize' in params:
-            form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
-        if 'data_era' in params:
-            form_params.append(('data_era', params['data_era']))  # noqa: E501
-        if 'entries_total' in params:
-            form_params.append(('entries_total', params['entries_total']))  # noqa: E501
-        if 'entries_processed' in params:
-            form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
-        if 'percentage_processed' in params:
-            form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
         if 'created' in params:
             form_params.append(('created', params['created']))  # noqa: E501
         if 'modified' in params:
@@ -15654,12 +15519,11 @@ class ApiApi(object):
         :param int id2:
         :param str filepath2:
         :param float filesize2:
-        :param int data_dimensionality2:
         :param str data_era2:
         :param int entries_total2:
         :param int entries_processed2:
         :param str percentage_processed2:
-        :param str granularity2:
+        :param list[HistogramDataFileContents] contents2:
         :param datetime created2:
         :param datetime modified2:
         :param int run_histograms2:
@@ -15668,12 +15532,11 @@ class ApiApi(object):
         :param int id2:
         :param str filepath:
         :param float filesize:
-        :param int data_dimensionality:
         :param str data_era:
         :param int entries_total:
         :param int entries_processed:
         :param str percentage_processed:
-        :param str granularity:
+        :param list[HistogramDataFileContents] contents:
         :param datetime created:
         :param datetime modified:
         :param int run_histograms:
@@ -15704,12 +15567,11 @@ class ApiApi(object):
         :param int id2:
         :param str filepath2:
         :param float filesize2:
-        :param int data_dimensionality2:
         :param str data_era2:
         :param int entries_total2:
         :param int entries_processed2:
         :param str percentage_processed2:
-        :param str granularity2:
+        :param list[HistogramDataFileContents] contents2:
         :param datetime created2:
         :param datetime modified2:
         :param int run_histograms2:
@@ -15718,12 +15580,11 @@ class ApiApi(object):
         :param int id2:
         :param str filepath:
         :param float filesize:
-        :param int data_dimensionality:
         :param str data_era:
         :param int entries_total:
         :param int entries_processed:
         :param str percentage_processed:
-        :param str granularity:
+        :param list[HistogramDataFileContents] contents:
         :param datetime created:
         :param datetime modified:
         :param int run_histograms:
@@ -15734,7 +15595,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'filepath2', 'filesize2', 'data_dimensionality2', 'data_era2', 'entries_total2', 'entries_processed2', 'percentage_processed2', 'granularity2', 'created2', 'modified2', 'run_histograms2', 'lumisection_histograms_1d2', 'lumisection_histograms_2d2', 'id2', 'filepath', 'filesize', 'data_dimensionality', 'data_era', 'entries_total', 'entries_processed', 'percentage_processed', 'granularity', 'created', 'modified', 'run_histograms', 'lumisection_histograms_1d', 'lumisection_histograms_2d']  # noqa: E501
+        all_params = ['id', 'id2', 'filepath2', 'filesize2', 'data_era2', 'entries_total2', 'entries_processed2', 'percentage_processed2', 'contents2', 'created2', 'modified2', 'run_histograms2', 'lumisection_histograms_1d2', 'lumisection_histograms_2d2', 'id2', 'filepath', 'filesize', 'data_era', 'entries_total', 'entries_processed', 'percentage_processed', 'contents', 'created', 'modified', 'run_histograms', 'lumisection_histograms_1d', 'lumisection_histograms_2d']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -15772,8 +15633,6 @@ class ApiApi(object):
             form_params.append(('filepath', params['filepath']))  # noqa: E501
         if 'filesize' in params:
             form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
         if 'data_era' in params:
             form_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'entries_total' in params:
@@ -15782,8 +15641,9 @@ class ApiApi(object):
             form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
         if 'percentage_processed' in params:
             form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
         if 'created' in params:
             form_params.append(('created', params['created']))  # noqa: E501
         if 'modified' in params:
@@ -15800,8 +15660,6 @@ class ApiApi(object):
             form_params.append(('filepath', params['filepath']))  # noqa: E501
         if 'filesize' in params:
             form_params.append(('filesize', params['filesize']))  # noqa: E501
-        if 'data_dimensionality' in params:
-            form_params.append(('data_dimensionality', params['data_dimensionality']))  # noqa: E501
         if 'data_era' in params:
             form_params.append(('data_era', params['data_era']))  # noqa: E501
         if 'entries_total' in params:
@@ -15810,8 +15668,216 @@ class ApiApi(object):
             form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
         if 'percentage_processed' in params:
             form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
-        if 'granularity' in params:
-            form_params.append(('granularity', params['granularity']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
+        if 'created' in params:
+            form_params.append(('created', params['created']))  # noqa: E501
+        if 'modified' in params:
+            form_params.append(('modified', params['modified']))  # noqa: E501
+        if 'run_histograms' in params:
+            form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
+        if 'lumisection_histograms_1d' in params:
+            form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
+        if 'lumisection_histograms_2d' in params:
+            form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/histogram_data_files/{id}/start_parsing/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='HistogramDataFile',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def start_parsing_histogram_data_file(self, id, **kwargs):  # noqa: E501
+        """start_parsing_histogram_data_file  # noqa: E501
+
+        Start parsing a specific HistogramDataFile, identified by pk  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.start_parsing_histogram_data_file(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this histogram data file. (required)
+        :param int id2:
+        :param str filepath2:
+        :param float filesize2:
+        :param str data_era2:
+        :param int entries_total2:
+        :param int entries_processed2:
+        :param str percentage_processed2:
+        :param list[HistogramDataFileContents] contents2:
+        :param datetime created2:
+        :param datetime modified2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
+        :param int id2:
+        :param str filepath:
+        :param float filesize:
+        :param str data_era:
+        :param int entries_total:
+        :param int entries_processed:
+        :param str percentage_processed:
+        :param list[HistogramDataFileContents] contents:
+        :param datetime created:
+        :param datetime modified:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
+        :return: HistogramDataFile
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.start_parsing_histogram_data_file_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.start_parsing_histogram_data_file_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def start_parsing_histogram_data_file_with_http_info(self, id, **kwargs):  # noqa: E501
+        """start_parsing_histogram_data_file  # noqa: E501
+
+        Start parsing a specific HistogramDataFile, identified by pk  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.start_parsing_histogram_data_file_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: A unique integer value identifying this histogram data file. (required)
+        :param int id2:
+        :param str filepath2:
+        :param float filesize2:
+        :param str data_era2:
+        :param int entries_total2:
+        :param int entries_processed2:
+        :param str percentage_processed2:
+        :param list[HistogramDataFileContents] contents2:
+        :param datetime created2:
+        :param datetime modified2:
+        :param int run_histograms2:
+        :param int lumisection_histograms_1d2:
+        :param int lumisection_histograms_2d2:
+        :param int id2:
+        :param str filepath:
+        :param float filesize:
+        :param str data_era:
+        :param int entries_total:
+        :param int entries_processed:
+        :param str percentage_processed:
+        :param list[HistogramDataFileContents] contents:
+        :param datetime created:
+        :param datetime modified:
+        :param int run_histograms:
+        :param int lumisection_histograms_1d:
+        :param int lumisection_histograms_2d:
+        :return: HistogramDataFile
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'id2', 'filepath2', 'filesize2', 'data_era2', 'entries_total2', 'entries_processed2', 'percentage_processed2', 'contents2', 'created2', 'modified2', 'run_histograms2', 'lumisection_histograms_1d2', 'lumisection_histograms_2d2', 'id2', 'filepath', 'filesize', 'data_era', 'entries_total', 'entries_processed', 'percentage_processed', 'contents', 'created', 'modified', 'run_histograms', 'lumisection_histograms_1d', 'lumisection_histograms_2d']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method start_parsing_histogram_data_file" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `start_parsing_histogram_data_file`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'filepath' in params:
+            form_params.append(('filepath', params['filepath']))  # noqa: E501
+        if 'filesize' in params:
+            form_params.append(('filesize', params['filesize']))  # noqa: E501
+        if 'data_era' in params:
+            form_params.append(('data_era', params['data_era']))  # noqa: E501
+        if 'entries_total' in params:
+            form_params.append(('entries_total', params['entries_total']))  # noqa: E501
+        if 'entries_processed' in params:
+            form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
+        if 'percentage_processed' in params:
+            form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
+        if 'created' in params:
+            form_params.append(('created', params['created']))  # noqa: E501
+        if 'modified' in params:
+            form_params.append(('modified', params['modified']))  # noqa: E501
+        if 'run_histograms' in params:
+            form_params.append(('run_histograms', params['run_histograms']))  # noqa: E501
+        if 'lumisection_histograms_1d' in params:
+            form_params.append(('lumisection_histograms_1d', params['lumisection_histograms_1d']))  # noqa: E501
+        if 'lumisection_histograms_2d' in params:
+            form_params.append(('lumisection_histograms_2d', params['lumisection_histograms_2d']))  # noqa: E501
+        if 'id' in params:
+            form_params.append(('id', params['id']))  # noqa: E501
+        if 'filepath' in params:
+            form_params.append(('filepath', params['filepath']))  # noqa: E501
+        if 'filesize' in params:
+            form_params.append(('filesize', params['filesize']))  # noqa: E501
+        if 'data_era' in params:
+            form_params.append(('data_era', params['data_era']))  # noqa: E501
+        if 'entries_total' in params:
+            form_params.append(('entries_total', params['entries_total']))  # noqa: E501
+        if 'entries_processed' in params:
+            form_params.append(('entries_processed', params['entries_processed']))  # noqa: E501
+        if 'percentage_processed' in params:
+            form_params.append(('percentage_processed', params['percentage_processed']))  # noqa: E501
+        if 'contents' in params:
+            form_params.append(('contents', params['contents']))  # noqa: E501
+            collection_formats['contents'] = 'multi'  # noqa: E501
         if 'created' in params:
             form_params.append(('created', params['created']))  # noqa: E501
         if 'modified' in params:
@@ -17110,6 +17176,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17144,6 +17211,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17153,7 +17221,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -17196,6 +17264,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -17311,7 +17381,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -17320,6 +17390,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17364,7 +17435,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -17373,6 +17444,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17382,7 +17454,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -17425,6 +17497,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -17540,7 +17614,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -17549,6 +17623,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17593,7 +17668,7 @@ class ApiApi(object):
         :param float x_min:
         :param float x_max:
         :param int x_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -17602,6 +17677,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17611,7 +17687,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -17654,6 +17730,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -17759,6 +17837,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17793,6 +17872,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -17802,7 +17882,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -17845,6 +17925,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -17978,7 +18060,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -17987,6 +18069,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -18037,7 +18120,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -18046,6 +18129,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -18055,7 +18139,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -18098,6 +18182,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -18231,7 +18317,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -18240,6 +18326,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -18290,7 +18377,7 @@ class ApiApi(object):
         :param float y_max:
         :param float y_min:
         :param int y_bin:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str lumisection__run__run_number: lumisection__run__run_number
         :param str lumisection__run__run_number__gte: lumisection__run__run_number__gte
         :param str lumisection__run__run_number__lte: lumisection__run__run_number__lte
@@ -18299,6 +18386,7 @@ class ApiApi(object):
         :param str lumisection__ls_number__lte: lumisection__ls_number__lte
         :param str entries__gte: entries__gte
         :param str entries__lte: entries__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str lumisection__ls_number__in: lumisection__ls_number__in
         :param str lumisection__run__run_number__in: lumisection__run__run_number__in
@@ -18308,7 +18396,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'lumisection2', 'title2', 'entries2', 'data2', 'x_min2', 'x_max2', 'x_bin2', 'y_max2', 'y_min2', 'y_bin2', 'source_data_file2', 'id2', 'run', 'lumisection', 'title2', 'entries', 'data', 'x_min', 'x_max', 'x_bin', 'y_max', 'y_min', 'y_bin', 'source_data_file2', 'lumisection__run__run_number', 'lumisection__run__run_number__gte', 'lumisection__run__run_number__lte', 'lumisection__ls_number', 'lumisection__ls_number__gte', 'lumisection__ls_number__lte', 'entries__gte', 'entries__lte', 'source_data_file', 'title', 'lumisection__ls_number__in', 'lumisection__run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -18351,6 +18439,8 @@ class ApiApi(object):
             query_params.append(('entries__gte', params['entries__gte']))  # noqa: E501
         if 'entries__lte' in params:
             query_params.append(('entries__lte', params['entries__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'lumisection__ls_number__in' in params:
@@ -20552,6 +20642,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -20595,6 +20686,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -20604,7 +20696,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'body', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -20665,6 +20757,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -20778,7 +20872,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -20796,6 +20890,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -20840,7 +20935,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -20858,6 +20953,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -20867,7 +20963,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -20928,6 +21024,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:
@@ -21041,7 +21139,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -21059,6 +21157,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -21103,7 +21202,7 @@ class ApiApi(object):
         :param float rms2:
         :param float skewness2:
         :param float kurtosis2:
-        :param int source_data_file:
+        :param int source_data_file2:
         :param str run__run_number__gte: run__run_number__gte
         :param str run__run_number__lte: run__run_number__lte
         :param str run__run_number: run__run_number
@@ -21121,6 +21220,7 @@ class ApiApi(object):
         :param str kurtosis: kurtosis
         :param str kurtosis__gte: kurtosis__gte
         :param str kurtosis__lte: kurtosis__lte
+        :param str source_data_file: source_data_file
         :param str title: title
         :param str primary_dataset: primary_dataset
         :param str run__run_number__in: run__run_number__in
@@ -21130,7 +21230,7 @@ class ApiApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
+        all_params = ['id', 'id2', 'run2', 'title2', 'primary_dataset2', 'entries2', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'id2', 'run', 'title2', 'primary_dataset2', 'entries', 'mean2', 'rms2', 'skewness2', 'kurtosis2', 'source_data_file2', 'run__run_number__gte', 'run__run_number__lte', 'run__run_number', 'entries__gte', 'entries__lte', 'mean', 'mean__gte', 'mean__lte', 'rms', 'rms__gte', 'rms__lte', 'skewness', 'skewness__gte', 'skewness__lte', 'kurtosis', 'kurtosis__gte', 'kurtosis__lte', 'source_data_file', 'title', 'primary_dataset', 'run__run_number__in', 'source_data_file__filepath__contains']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -21191,6 +21291,8 @@ class ApiApi(object):
             query_params.append(('kurtosis__gte', params['kurtosis__gte']))  # noqa: E501
         if 'kurtosis__lte' in params:
             query_params.append(('kurtosis__lte', params['kurtosis__lte']))  # noqa: E501
+        if 'source_data_file' in params:
+            query_params.append(('source_data_file', params['source_data_file']))  # noqa: E501
         if 'title' in params:
             query_params.append(('title', params['title']))  # noqa: E501
         if 'primary_dataset' in params:

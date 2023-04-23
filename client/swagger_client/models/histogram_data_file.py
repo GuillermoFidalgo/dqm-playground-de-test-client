@@ -31,12 +31,11 @@ class HistogramDataFile(object):
         'id': 'int',
         'filepath': 'str',
         'filesize': 'float',
-        'data_dimensionality': 'int',
         'data_era': 'str',
         'entries_total': 'int',
         'entries_processed': 'int',
         'percentage_processed': 'str',
-        'granularity': 'str',
+        'contents': 'list[HistogramDataFileContents]',
         'created': 'datetime',
         'modified': 'datetime',
         'run_histograms': 'int',
@@ -48,12 +47,11 @@ class HistogramDataFile(object):
         'id': 'id',
         'filepath': 'filepath',
         'filesize': 'filesize',
-        'data_dimensionality': 'data_dimensionality',
         'data_era': 'data_era',
         'entries_total': 'entries_total',
         'entries_processed': 'entries_processed',
         'percentage_processed': 'percentage_processed',
-        'granularity': 'granularity',
+        'contents': 'contents',
         'created': 'created',
         'modified': 'modified',
         'run_histograms': 'run_histograms',
@@ -61,17 +59,16 @@ class HistogramDataFile(object):
         'lumisection_histograms_2d': 'lumisection_histograms_2d'
     }
 
-    def __init__(self, id=None, filepath=None, filesize=None, data_dimensionality=None, data_era=None, entries_total=None, entries_processed=None, percentage_processed=None, granularity=None, created=None, modified=None, run_histograms=None, lumisection_histograms_1d=None, lumisection_histograms_2d=None):  # noqa: E501
+    def __init__(self, id=None, filepath=None, filesize=None, data_era=None, entries_total=None, entries_processed=None, percentage_processed=None, contents=None, created=None, modified=None, run_histograms=None, lumisection_histograms_1d=None, lumisection_histograms_2d=None):  # noqa: E501
         """HistogramDataFile - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._filepath = None
         self._filesize = None
-        self._data_dimensionality = None
         self._data_era = None
         self._entries_total = None
         self._entries_processed = None
         self._percentage_processed = None
-        self._granularity = None
+        self._contents = None
         self._created = None
         self._modified = None
         self._run_histograms = None
@@ -83,8 +80,6 @@ class HistogramDataFile(object):
         self.filepath = filepath
         if filesize is not None:
             self.filesize = filesize
-        if data_dimensionality is not None:
-            self.data_dimensionality = data_dimensionality
         if data_era is not None:
             self.data_era = data_era
         if entries_total is not None:
@@ -93,8 +88,7 @@ class HistogramDataFile(object):
             self.entries_processed = entries_processed
         if percentage_processed is not None:
             self.percentage_processed = percentage_processed
-        if granularity is not None:
-            self.granularity = granularity
+        self.contents = contents
         if created is not None:
             self.created = created
         if modified is not None:
@@ -171,33 +165,6 @@ class HistogramDataFile(object):
         """
 
         self._filesize = filesize
-
-    @property
-    def data_dimensionality(self):
-        """Gets the data_dimensionality of this HistogramDataFile.  # noqa: E501
-
-
-        :return: The data_dimensionality of this HistogramDataFile.  # noqa: E501
-        :rtype: int
-        """
-        return self._data_dimensionality
-
-    @data_dimensionality.setter
-    def data_dimensionality(self, data_dimensionality):
-        """Sets the data_dimensionality of this HistogramDataFile.
-
-
-        :param data_dimensionality: The data_dimensionality of this HistogramDataFile.  # noqa: E501
-        :type: int
-        """
-        allowed_values = [0, 1, 2]  # noqa: E501
-        if data_dimensionality not in allowed_values:
-            raise ValueError(
-                "Invalid value for `data_dimensionality` ({0}), must be one of {1}"  # noqa: E501
-                .format(data_dimensionality, allowed_values)
-            )
-
-        self._data_dimensionality = data_dimensionality
 
     @property
     def data_era(self):
@@ -290,33 +257,29 @@ class HistogramDataFile(object):
         self._percentage_processed = percentage_processed
 
     @property
-    def granularity(self):
-        """Gets the granularity of this HistogramDataFile.  # noqa: E501
+    def contents(self):
+        """Gets the contents of this HistogramDataFile.  # noqa: E501
 
-        The granularity of the data contained in the data file (either whole run or lumisections)  # noqa: E501
+        The file's contents in regards to histogram type and dimensionality  # noqa: E501
 
-        :return: The granularity of this HistogramDataFile.  # noqa: E501
-        :rtype: str
+        :return: The contents of this HistogramDataFile.  # noqa: E501
+        :rtype: list[HistogramDataFileContents]
         """
-        return self._granularity
+        return self._contents
 
-    @granularity.setter
-    def granularity(self, granularity):
-        """Sets the granularity of this HistogramDataFile.
+    @contents.setter
+    def contents(self, contents):
+        """Sets the contents of this HistogramDataFile.
 
-        The granularity of the data contained in the data file (either whole run or lumisections)  # noqa: E501
+        The file's contents in regards to histogram type and dimensionality  # noqa: E501
 
-        :param granularity: The granularity of this HistogramDataFile.  # noqa: E501
-        :type: str
+        :param contents: The contents of this HistogramDataFile.  # noqa: E501
+        :type: list[HistogramDataFileContents]
         """
-        allowed_values = ["unk", "run", "lum"]  # noqa: E501
-        if granularity not in allowed_values:
-            raise ValueError(
-                "Invalid value for `granularity` ({0}), must be one of {1}"  # noqa: E501
-                .format(granularity, allowed_values)
-            )
+        if contents is None:
+            raise ValueError("Invalid value for `contents`, must not be `None`")  # noqa: E501
 
-        self._granularity = granularity
+        self._contents = contents
 
     @property
     def created(self):
@@ -364,6 +327,7 @@ class HistogramDataFile(object):
     def run_histograms(self):
         """Gets the run_histograms of this HistogramDataFile.  # noqa: E501
 
+        Total Run Histograms retrieved form this file  # noqa: E501
 
         :return: The run_histograms of this HistogramDataFile.  # noqa: E501
         :rtype: int
@@ -374,6 +338,7 @@ class HistogramDataFile(object):
     def run_histograms(self, run_histograms):
         """Sets the run_histograms of this HistogramDataFile.
 
+        Total Run Histograms retrieved form this file  # noqa: E501
 
         :param run_histograms: The run_histograms of this HistogramDataFile.  # noqa: E501
         :type: int
@@ -387,6 +352,7 @@ class HistogramDataFile(object):
     def lumisection_histograms_1d(self):
         """Gets the lumisection_histograms_1d of this HistogramDataFile.  # noqa: E501
 
+        Total Lumisection 1D Histograms retrieved form this file  # noqa: E501
 
         :return: The lumisection_histograms_1d of this HistogramDataFile.  # noqa: E501
         :rtype: int
@@ -397,6 +363,7 @@ class HistogramDataFile(object):
     def lumisection_histograms_1d(self, lumisection_histograms_1d):
         """Sets the lumisection_histograms_1d of this HistogramDataFile.
 
+        Total Lumisection 1D Histograms retrieved form this file  # noqa: E501
 
         :param lumisection_histograms_1d: The lumisection_histograms_1d of this HistogramDataFile.  # noqa: E501
         :type: int
@@ -410,6 +377,7 @@ class HistogramDataFile(object):
     def lumisection_histograms_2d(self):
         """Gets the lumisection_histograms_2d of this HistogramDataFile.  # noqa: E501
 
+        Total Lumisection 2D Histograms retrieved form this file  # noqa: E501
 
         :return: The lumisection_histograms_2d of this HistogramDataFile.  # noqa: E501
         :rtype: int
@@ -420,6 +388,7 @@ class HistogramDataFile(object):
     def lumisection_histograms_2d(self, lumisection_histograms_2d):
         """Sets the lumisection_histograms_2d of this HistogramDataFile.
 
+        Total Lumisection 2D Histograms retrieved form this file  # noqa: E501
 
         :param lumisection_histograms_2d: The lumisection_histograms_2d of this HistogramDataFile.  # noqa: E501
         :type: int
