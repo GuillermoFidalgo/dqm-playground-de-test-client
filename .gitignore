@@ -130,3 +130,7 @@ dmypy.json
 
 # SWAN
 .sys.v#*
+
+# data files
+*.root
+
