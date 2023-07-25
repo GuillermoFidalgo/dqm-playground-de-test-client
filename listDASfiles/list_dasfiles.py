@@ -11,24 +11,47 @@ parser.add_argument('--outputdir', default=os.path.abspath('.'),
                   help='Local directory where to put the copied file')
 
 
-parser.add_argument("--listfiles",type=str,
+parser.add_argument("--outfile",type=str,
                     default='listfiles.txt',
-                    help='A text file with list of paths from DAS.')
+                    help='The output text file with list of files from DAS.')
+
+parser.add_argument("--datasets",type=str,
+                    default='/eos/home-g/gfidalgo/SWAN_projects/dqm-playground-de-test-client/listDASfiles/list_datasets.txt',
+                    help='A text file with list of datasets from DAS.')
+
+parser.add_argument("-v",'--verbose',
+		    action='store_true'
+		    )
 
 args = parser.parse_args()
 
-
 outputdir = args.outputdir
+outfile = args.outfile
+datasets_file = args.datasets
+verbose = args.verbose
 
-listfiles = args.listfiles
+file = open(datasets_file)
+datasets= [line.strip() for line in file.readlines()]
+file.close()
+del file
 
 
-eras = ['A','B','C','D','E','F','G']
-for i in eras:
-    
-    if i == 'A':
-        cmd = f'dasgoclient -query="file dataset=/ZeroBias/Run2022{i}-19Jan2023-v2/DQMIO" | grep "/store" > {outputdir}/{listfiles}' 
-    else:
-        cmd = f'dasgoclient -query="file dataset=/ZeroBias/Run2022{i}-19Jan2023-v2/DQMIO" | grep "/store" >> {outputdir}/{listfiles}'
-    
-    subprocess.run(cmd, shell=True, check=False)
+if verbose :
+    for i,dataset in enumerate(datasets):
+        if i == 0:
+            cmd = f'dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
+        else:
+            cmd = f'dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
+        
+        print(cmd)
+        subprocess.run(cmd, shell=True, check=False)
+        
+else:
+    for i,dataset in enumerate(datasets):
+        if i == 0:
+            cmd = f'dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
+        else:
+            cmd = f'dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
+
+        subprocess.run(cmd, shell=True, check=False)
+

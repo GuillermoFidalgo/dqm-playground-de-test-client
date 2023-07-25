@@ -9,10 +9,12 @@ parser.add_argument('--redirector', default='root://cms-xrd-global.cern.ch/',
 parser.add_argument('--outputdir', default=os.path.abspath('.'),
                   help='Local directory where to put the copied file')
 parser.add_argument('--nfiles', default=None,type=int,
-                  help="Limit the number of files to copy. (Default is all file from the listfiles.txt will be downloaded)")
+                  help="Limit the number of files to copy. (Default: all files from the listfiles.txt will be downloaded)")
 parser.add_argument("--listfiles",type=str,
                     default='/eos/home-g/gfidalgo/SWAN_projects/dqm-playground-de-test-client/listDASfiles/listfiles.txt',
                     help='A text file with list of paths from DAS.')
+parser.add_argument("-v","--verbose",action="store_true",
+                    help="Prints to screen what files are already found in the outputdir")
 
 args = parser.parse_args()
 
@@ -20,6 +22,7 @@ redirector = args.redirector
 outputdir = args.outputdir
 nfiles=args.nfiles
 listfiles = args.listfiles
+verbose = args.verbose
 
 f = open(listfiles,'r')
 files = [i.rstrip('\n') for i in f.readlines()]
@@ -43,6 +46,8 @@ for file in files[slice(nfiles)]:
     fname = file.strip('/').replace('/','_')
     cmd = f'xrdcp {redirector}{file} {outputdir}/{fname}'
     if file_downloaded(fname,outputdir): 
-        print(f'{fname} already present. Moving on the the next!')
+        if verbose:
+            print(f'{fname} already present. Moving on the the next!')
         continue
-    subprocess.run(cmd, shell=True, check=False)
+    else: 
+        subprocess.run(cmd, shell=True, check=False)
