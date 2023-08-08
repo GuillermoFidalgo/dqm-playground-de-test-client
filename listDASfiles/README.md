@@ -4,7 +4,7 @@ This folder contains scripts that are used to upload files to a specific area in
 
 ## Scripts
 
-- First we have `listdasfiles.py` this will run a series of DAS queries in order to make a list of files found by the queries and deposits this list into a text file. This file requires that there is a `datasets.txt` somewhere. I call this *all_files.txt* in my case.
+- First we have `listdasfiles.py` this will run a series of DAS queries in order to make a list of files found by the queries and deposits this list into a text file. This file requires that there is a `datasets.txt` somewhere. I call this *list_datasets.txt* in my case.
 
 To create this file please run the following command or any other command that will result in your required datasets 
 
