@@ -39,9 +39,9 @@ del file
 if verbose :
     for i,dataset in enumerate(datasets):
         if i == 0:
-            cmd = f'dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
+            cmd = f'/cvmfs/cms.cern.ch/common/dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
         else:
-            cmd = f'dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
+            cmd = f'/cvmfs/cms.cern.ch/common/dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
         
         print(cmd)
         subprocess.run(cmd, shell=True, check=False)
@@ -49,9 +49,9 @@ if verbose :
 else:
     for i,dataset in enumerate(datasets):
         if i == 0:
-            cmd = f'dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
+            cmd = f'/cvmfs/cms.cern.ch/common/dasgoclient -query="file dataset={dataset}" > {outputdir}/{outfile}'
         else:
-            cmd = f'dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
+            cmd = f'/cvmfs/cms.cern.ch/common/dasgoclient -query="file dataset={dataset}" >> {outputdir}/{outfile}'
 
         subprocess.run(cmd, shell=True, check=False)
 
