@@ -6,12 +6,12 @@ import subprocess, os, argparse
 parser = argparse.ArgumentParser(description='Copy files from DAS to local')
 parser.add_argument('--redirector', default='root://cms-xrd-global.cern.ch/',
                   help='Redirector to read remote files')
-parser.add_argument('--outputdir', default=os.path.abspath('.'),
+parser.add_argument('--outdir', default=os.path.abspath('.'),
                   help='Local directory where to put the copied file')
 parser.add_argument('--nfiles', default=None,type=int,
                   help="Limit the number of files to copy. (Default: all files from the listfiles.txt will be downloaded)")
 parser.add_argument("--listfiles",type=str,
-                    default='/eos/home-g/gfidalgo/SWAN_projects/dqm-playground-de-test-client/listDASfiles/listfiles.txt',
+                    default='listfiles.txt',
                     help='A text file with list of paths from DAS.')
 parser.add_argument("-v","--verbose",action="store_true",
                     help="Prints to screen what files are already found in the outputdir")
@@ -19,7 +19,7 @@ parser.add_argument("-v","--verbose",action="store_true",
 args = parser.parse_args()
 
 redirector = args.redirector
-outputdir = args.outputdir
+outputdir = args.outdir
 nfiles=args.nfiles
 listfiles = args.listfiles
 verbose = args.verbose
@@ -50,4 +50,6 @@ for file in files[slice(nfiles)]:
             print(f'{fname} already present. Moving on the the next!')
         continue
     else: 
-        subprocess.run(cmd, shell=True, check=False)
+            subprocess.run(cmd, shell=True, check=False,)
+
+            

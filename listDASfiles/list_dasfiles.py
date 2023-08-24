@@ -7,7 +7,7 @@ import subprocess,os, argparse
 # read arguments
 parser = argparse.ArgumentParser(description='Make a list of files found on DAS')
 
-parser.add_argument('--outputdir', default=os.path.abspath('.'),
+parser.add_argument('--outdir', default=os.path.abspath('.'),
                   help='Local directory where to put the copied file')
 
 
@@ -16,16 +16,14 @@ parser.add_argument("--outfile",type=str,
                     help='The output text file with list of files from DAS.')
 
 parser.add_argument("--datasets",type=str,
-                    default='/eos/home-g/gfidalgo/SWAN_projects/dqm-playground-de-test-client/listDASfiles/list_datasets.txt',
+                    default='list_datasets.txt',
                     help='A text file with list of datasets from DAS.')
 
-parser.add_argument("-v",'--verbose',
-		    action='store_true'
-		    )
+parser.add_argument("-v",'--verbose',action='store_true')
 
 args = parser.parse_args()
 
-outputdir = args.outputdir
+outputdir = args.outdir
 outfile = args.outfile
 datasets_file = args.datasets
 verbose = args.verbose
