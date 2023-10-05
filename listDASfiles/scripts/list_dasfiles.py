@@ -68,8 +68,6 @@ if verbose :
         else: 
             logfile.write(process.stdout.decode())
             
-            
-            
 else:
     for i,dataset in enumerate(datasets):
         if i == 0:
