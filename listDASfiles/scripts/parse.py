@@ -3,6 +3,7 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 import requests
+import datetime
 
 # Configure and create an API client
 # using an API token
@@ -47,9 +48,10 @@ parser.add_argument('--file_format',type=str,
 
 
 args = parser.parse_args()
+now = datetime.datetime.now().strftime("%a_%d_%b_%Y_%H_%M")
+logfile = open(f'parse_{now}.log','a')
 
 for file in args.files :
-
 
     result = api_instance.list_histogram_data_files(filepath__contains=f'{file}').results
     if not result:
@@ -63,6 +65,6 @@ for file in args.files :
         json={'granularity':args.granularity, 'data_dimensionality':args.data_dimensionality, 'file_format':args.file_format}
     )
     if not r.ok:
-        print(f"Parsing request not ok with file {file}",file =open('parse.log','a'))
+        print(f"Parsing request not ok with file {file}",file =logfile)
     else: 
-        print(f"Parsing started for file {file}\nfile id is {file_id}",file=open('parse.log','a'))
+        print(f"Parsing started for file {file}\nfile id is {file_id}",file=logfile)

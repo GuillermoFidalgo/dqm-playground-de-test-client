@@ -47,7 +47,9 @@ else:
     print(f'Creating {outputdir}')
     os.makedirs(outputdir)
 
-logfile = open(outputdir+'/list_dasfiles.log','w')
+
+now=datetime.datetime.now().strftime("%a_%d_%b_%Y_%H_%M")
+logfile = open(outputdir+f'/list_dasfiles{now}.log','w')
 
 if verbose :
     for i,dataset in enumerate(datasets):

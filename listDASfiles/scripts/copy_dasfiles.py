@@ -18,7 +18,7 @@ parser.add_argument("-v","--verbose",action="store_true",
 args = parser.parse_args()
 
 redirector = args.redirector
-outputdir = args.outdir
+outputdir = args.outdir.rstrip('/')
 nfiles = args.nfiles
 listfiles = args.listfiles
 verbose = args.verbose
@@ -38,27 +38,13 @@ else:
     print(f'Downloading to {outputdir}')
     os.makedirs(outputdir)
 
-logfile = open(outputdir+'/copy_dasfiles.log','w')
+
+now = datetime.datetime.now().strftime("%a_%d_%b_%Y_%H_%M")
+logfile = open(outputdir+f'/copy_dasfiles_{now}.log','w')
 
 if nfiles != None:
     print(f"Downloading {nfiles} files into {outputdir}")
 
-# for file in files[slice(nfiles)]:
-#     fname = file.strip('/').replace('/','_')
-#     cmd = f'xrdcp {redirector}{file} {outputdir}/{fname}'
-#     if verbose: 
-#         if file_downloaded(fname,outputdir): 
-#             print(f'{fname} already present. Moving on the the next!')
-#             continue
-#         else:
-#             print(f'Downloading {fname}')
-#             process=subprocess.run(cmd, shell=True, 
-#                            stdout=subprocess.PIPE,
-#                            stderr=subprocess.PIPE )
-#     else: 
-#             process=subprocess.run(cmd, shell=True, 
-#                            stdout=subprocess.PIPE,
-#                            stderr=subprocess.PIPE )
 
 if verbose:
     for file in files[slice(nfiles)]:

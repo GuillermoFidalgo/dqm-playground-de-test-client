@@ -133,3 +133,6 @@ dmypy.json
 
 # data files
 *.root
+
+# vscode
+.vscode
