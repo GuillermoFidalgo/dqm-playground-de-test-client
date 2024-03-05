@@ -1,0 +1,1 @@
+echo "Cron job is running" > $PWD/cron_temp.txt

@@ -4,6 +4,7 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 import requests
 import datetime
+import time
 
 # Configure and create an API client
 # using an API token
@@ -35,7 +36,7 @@ parser.add_argument('--granularity', default='lum',
                     choices=['lum','run'],
                     help='Granularity of the file [lumisection | run]')
 
-parser.add_argument("--data_dimensionality",
+parser.add_argument('-d',"--data_dimensionality",
                     type=int,
                     default=1,
                     choices=[1,2],
@@ -46,14 +47,25 @@ parser.add_argument('--file_format',type=str,
                     default='root',
                     help='Type of file to be parsed [ csv | root ]')
 
+parser.add_argument('--logpath',type=str,required=True,
+                    help='Where to dump the logfile. This is required.')
+parser.add_argument("-v",'--verbose',action="store_true",
+                    help="Prints to screen")
+
 
 args = parser.parse_args()
 now = datetime.datetime.now().strftime("%a_%d_%b_%Y_%H_%M")
-logfile = open(f'parse_{now}.log','a')
+logpath = args.logpath.rstrip('/')
+logfile = open(f'{logpath}/parse_{args.granularity}_{args.data_dimensionality}_{args.file_format}_{now}.log','a')
 
-for file in args.files :
 
-    result = api_instance.list_histogram_data_files(filepath__contains=f'{file}').results
+for i,file in enumerate(args.files) :
+    start = time.time()
+        
+    result = api_instance.list_histogram_data_files(filepath__contains=f'{file.rpartition("_")[-1]}').results 
+    # the rpartition allows for use of softlinks to the eos area by just looking 
+    # at the filename and not the full path in the DB.
+    
     if not result:
         print("No results found")
         sys.exit()
@@ -64,7 +76,23 @@ for file in args.files :
         headers={"Content-Type": "application/json", "Authorization": f"Token {DEVELOP_API_TOKEN}"},
         json={'granularity':args.granularity, 'data_dimensionality':args.data_dimensionality, 'file_format':args.file_format}
     )
+    
     if not r.ok:
         print(f"Parsing request not ok with file {file}",file =logfile)
+        if args.verbose:
+            print(f"Parsing request not ok with file {file}")
     else: 
         print(f"Parsing started for file {file}\nfile id is {file_id}",file=logfile)
+        if args.verbose:
+            print(f"Parsing started for file {file}\nfile id is {file_id}")
+            
+    end = time.time()
+    delta = end-start
+    if delta > 5 : 
+        print("\nWaiting 10 min\n",file=logfile)
+        if args.verbose:
+            print("\nWaiting 10 min\n")
+        time.sleep(60*10)
+    elif delta > 2:
+        print("Waiting a minute",file=logfile)
+        time.sleep(60) # Wait a minute before trying to submit next file

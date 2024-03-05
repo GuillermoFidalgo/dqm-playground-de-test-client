@@ -58,7 +58,7 @@ if verbose:
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE )
         if process.stderr:
-            # add datetime log here for when file listing fails
+            # add datetime log here for when file copy fails
             logfile.write(f'Error at {datetime.datetime.now().strftime("%c")} with file {file} : \n{process.stderr.decode()} \n')
             print(f"Check the {logfile.name} file")
         else: 
@@ -74,7 +74,7 @@ else:
                    stdout=subprocess.PIPE,
                    stderr=subprocess.PIPE )
         if process.stderr:
-            # add datetime log here for when file listing fails
+            # add datetime log here for when file copy fails
             logfile.write(f'Error at {datetime.datetime.now().strftime("%c")} with file {file} : \n{process.stderr.decode()} \n')
         else: 
             logfile.write(process.stdout.decode())

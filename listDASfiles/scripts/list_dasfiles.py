@@ -2,9 +2,6 @@
 
 import subprocess,os, argparse,datetime
 
-
-
-
 # read arguments
 parser = argparse.ArgumentParser(description='Make a list of files found on DAS')
 
